@@ -16,6 +16,23 @@ p.rectangle{
     opacity: 0.5;
 }
 
+#sizee{
+    padding : 10px;
+    margin-right: 10px;
+    border-radius: 5 px;
+    border : 1 px solid white;
+}
+
+#myTable{
+    margin-top: 30px;
+}
+
+table{
+    width : 300px;
+    height: 300px;
+}
+
+
 input[type=number], select {
     width: 200px;
     padding: 12px 20px;
@@ -26,17 +43,18 @@ input[type=number], select {
     box-sizing: border-box;
   }
   
-  input[type=submit] {
-    width: 100px;
-    background-color: #4c56af;
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
-  }
+    }
   
-  input[type=submit]:hover {
-    background-color: #455aa0;
-  }
