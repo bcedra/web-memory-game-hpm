@@ -1,63 +1,23 @@
 <!DOCTYPE html>
-<html>
+    <head>
+        <title>task2_Ana</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
 
-<head>
-    <style>
-        p {
-            color: red;
-            text-align: left;
-            font-size: 25px;
-        }
-    </style>
-</head>
+    <body>
+        <div class="table-wrapper">
+            <div id="insert-number">
+                <table id="myTable"></table>
+                <form id="myForm"> 
+                    <input type="number" id="number" name="number">
+                    <input type="button" onclick="getValue(); createTable();" id="button" value="OK">
+                </form>
+            </div>
+        <!-- <p> Nr. randuri: <span id="rowNumber"></span></p>  -->
+        </div>
 
-<body>
+        <script src="index.js"></script>
 
-    <p>Hello World!</p>
-    <p>These paragraphs are styled with CSS.</p>
-    <p>testIulia</p>
-    <p>test1</p>
+    </body>
 
-    <br>
 
-    <style> 
-        .dreptunghi {
-            width:350px;
-            height:300px;
-            border: 8px solid black;
-        }
-
-    </style>
-    <div class="dreptunghi">
-        <img src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1415716940.jpg?resize=876,584" alt="imagine"
-        style="width:350px;height:300px;">
-
-    
-    </div>
-    <br> 
-    <form id="myForm">
-
-        <label for="name">Name</label><br>
-        <input type="text" id="name" name="name" value=><br>
-        <label for="age">Age</label><br>
-        <input type="number" id="age" name="age"><br>
-        <button onclick="getValue()">OK</button>
-        
-        <p> Name: <span id="display_name"></span></p>
-        <p> Age: <span id="display_age"></span></p>
-
-    </form>
-    
-<script>
-     document.getElementById("myForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        var text = document.getElementById("name").value;
-        var number = document.getElementById("age").value;
-        document.getElementById("display_name").innerHTML = text;
-        document.getElementById("display_age").innerHTML = number;
-    });
-
-</script>
-</body>
-
-</html>
