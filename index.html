@@ -3,20 +3,24 @@
 
 <head>
     <style>
-        p {
-            color: red;
-            text-align: left;
-            font-size: 25px;
-        }
+        
     </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
     <p>Hello World!</p>
-    <p>These paragraphs are styled with CSS.</p>
-    <p>testIulia</p>
-    <p>test1</p>
+    
+    <p class = "rectangle"></p>
+    <form myForm>
+        <label for="inputNb">Numar</label>
+        <input type="number" id="nb" name="Input" placeholder="Dati un nr. <= 5">
+        <input type="submit" value="OK">
+    </form>
+    <p id = "nb"></p>
+
+    <script src="index.js"></script>
 
 </body>
 
