@@ -10,10 +10,14 @@ function createTable(){
     for (var i = 0; i < sizee; i++) {
         var rowData = [];
         var row = document.createElement("tr");
+        
         for (var j = 0; j < sizee; j++) {
           var cell = document.createElement("td");
-          cell.createTextNode(i);
+          const textnoder = document.createTextNode(i);
+          const textnodec = document.createTextNode(j);
           row.appendChild(cell);
+          cell.append(textnoder);
+          cell.append(textnodec);
         }
         table.appendChild(row);
         tableData.push(rowData);
