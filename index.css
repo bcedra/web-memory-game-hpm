@@ -1,19 +1,20 @@
 p {
     color: black;
     text-align: left;
-    font-size: 25px;
+    font-size: 40px;
+    text-shadow: 2px 2px;
+}
+
+p2 {
+    color: black;
+    text-align: left;
+    font-size: 30px;
+    text-shadow: 1px 0px;
 }
 
 body{
-    background-color: lightblue;
+    background-image: linear-gradient(to left, rgb(0, 195, 255) , rgb(240, 231, 240));
    
-}
-
-p.rectangle{
-    width : 100%;
-    height : 100%;
-    background-color: aqua;
-    opacity: 0.5;
 }
 
 #sizee{
@@ -32,6 +33,12 @@ table{
     height: 300px;
 }
 
+img{
+    width : 100px;
+    height : 100px;
+    opacity : 0.9;
+}
+
 
 input[type=number], select {
     width: 200px;
@@ -44,17 +51,28 @@ input[type=number], select {
   }
   
 td {
-    border: 1px solid black;
+    background-color: rgb(208, 240, 239);
+    border: 2px solid rgb(254, 254, 254);
+    border-style: dashed;
     padding: 8px;
     text-align: center;
+    box-shadow: 10px 10px 5px 12px lightblue;
   }
 
-  button {
+td:hover{
+    opacity: 0.4;
+}
+
+button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #4CAF50;
+    background-color: #2906d6;
     color: white;
     border: none;
     border-radius: 4px;
     }
+
+button:hover{
+    background-color: #2f2b4b;
+}
   
