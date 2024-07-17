@@ -1,23 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <head> 
+        <title>TASK 3</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
 
-<head>
-    <style>
-        p {
-            color: red;
-            text-align: left;
-            font-size: 25px;
-        }
-    </style>
-</head>
+    <body>
+        <h3>Task 3 - Form that stores user input into its fields with the use of cookies</h3>
+    
+        <div id="form">
+        <form id ="myForm">
+                <label for="nameWritten">Name</label><br>
+                <input type="text" id="nameWritten" name="name" required><br>
 
-<body>
+                <label for="birthDateValue">Birth date</label><br>
+                <input type="date" id="birthDateValue" name="Birthday" required><br>
 
-    <p>Hello World!</p>
-    <p>These paragraphs are styled with CSS.</p>
-    <p>testIulia</p>
-    <p>test1</p>
+                <label for="category">Choose a category:</label><br>
+                <select name="category" id="category" required>
+                    <option value="chooseCategory">  --------</option>
+                    <option value="fruits">Fruits</option>
+                    <option value="vegetables">Vegetables</option>
+                    <option value="drinks">Drinks</option>
+                </select><br>
 
-</body>
-
+                <button type="submit">Submit<br>
+        </form>
+    </div>
+    </body>
+    <script src="index.js"></script>
 </html>
