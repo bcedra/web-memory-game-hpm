@@ -3,20 +3,38 @@
 
 <head>
     <style>
-        p {
-            color: red;
-            text-align: left;
-            font-size: 25px;
-        }
+
     </style>
+        <link rel = "stylesheet" href = "index.css">
+
 </head>
 
 <body>
+    <form id = "myForm">
+        <div>
+            <label for="username">Name</label>
+            <input type="string" id="username" name="inputName" maxlength="30" required>
+        </div>
+        <div>
+            <label for="date">Date</label>
+            <input type="date" id="date" name="inputDate"  max="2024-07-17" required>
+        </div>
+        
+        <div><button type="submit">Submit</button></div>
+    </form>
 
-    <p>Hello World!</p>
-    <p>These paragraphs are styled with CSS.</p>
-    <p>testIulia</p>
+    <div>
+    <label for="inputElements">Choose an element:</label>
+    <select name="element" id="element" form="carform">
+        <option value="fruits">Fruits</option>
+        <option value="vegetables">Vegetables</option>
+        <option value="drinks">Drinks</option>
+    </select>
+    </div>
+    
 
 </body>
+
+<script src = "index.js"></script>
 
 </html>
