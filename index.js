@@ -32,6 +32,6 @@ function createTable() {
         }
     tbl.appendChild(tblBody);
     document.body.appendChild(tbl);
-    tbl.setAttribute("border", "2");
+    tbl.setAttribute("border", "2"); 
     
 }
