@@ -5,36 +5,29 @@
     <style>
 
     </style>
-        <link rel = "stylesheet" href = "index.css">
+    <link rel="stylesheet" href="index.css">
 
 </head>
 
 <body>
-    <form id = "myForm">
-        <div>
-            <label for="username">Name</label>
-            <input type="string" id="username" name="inputName" placeholder = getCookie() maxlength="30" required>
-        </div>
-        <div>
-            <label for="date">Date</label>
-            <input type="date" id="date" name="inputDate"  max="2024-07-17" required>
-        </div>
-        
-        <div><button type="submit">Submit</button></div>
-    </form>
+    <p style='font-size:70px;'>&#127850;</p>
+    <form id="myForm">
+        <p><label for="username">Name</label></p>
+        <p><input type="text" id="username" name="inputName" maxlength="30" required></p>
+        <p><label for="date">Date</label></p>
+        <p><input type="date" id="date" name="inputDate" max="2024-07-17" required></p>
+        <p><label for="inputElements">Choose an element:</label></p>
+        <p><select name="element" id="element" form="carform">
+                <option value="fruits">Fruits</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="drinks">Drinks</option>
+            </select></p>
 
-    <div>
-    <label for="inputElements">Choose an element:</label>
-    <select name="element" id="element" form="carform">
-        <option value="fruits">Fruits</option>
-        <option value="vegetables">Vegetables</option>
-        <option value="drinks">Drinks</option>
-    </select>
-    </div>
-    
+        <p><button type="submit">Submit</button></p>
+    </form>
 
 </body>
 
-<script src = "index.js"></script>
+<script src="index.js"></script>
 
 </html>

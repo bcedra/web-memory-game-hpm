@@ -1,5 +1,5 @@
 
-const cookieKey = "cookieTest";
+const cookieKey = "cookieTest123";
 function onSubmit(){
   document.getElementById("myForm").addEventListener("submit", function(event) {
   event.preventDefault(); // Prevent form from refreshing the page
@@ -14,14 +14,12 @@ function onSubmit(){
   console.log(object);
 
   var objectSerilized = JSON.stringify(object);
+  var objectDeserilized = JSON.parse(objectSerilized);
 
   setCookie(cookieKey, objectSerilized, 30);
 
 });
 }
-
-onSubmit();
-
 
 function checkDate() {
   const today = new Date();
@@ -29,7 +27,7 @@ function checkDate() {
   const mm = String(today.getMonth() + 1).padStart(2, '0'); 
   const yyyy = today.getFullYear();
 
-  const formattedDate = mm + '/' + dd + '/' + yyyy;
+  const formattedDate = yyyy + '/' + mm + '/' + dd;
 
   return formattedDate;
 }
@@ -57,16 +55,31 @@ function getCookie(cname) {
   return "";
 }
 
-function checkCookie() {
-  let user = getCookie("username");
-  if (user != "") {
-    alert("Welcome again " + user);
-  } else {
-     user = prompt("Please enter your name:","");
-     if (user != "" && user != null) {
-       setCookie("username", user, 30);
-     }
+function validateForm() {
+  let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
   }
+}
+
+function loadCookie() {
+  let cookieValue = getCookie(cookieKey);
+  if(cookieValue) {
+      let objectDeserilized = JSON.parse(cookieValue);
+      document.getElementById("username").value=objectDeserilized.name;
+      document.getElementById("date").value=objectDeserilized.date;
+      document.getElementById("element").value=objectDeserilized.category;
+  }
+  }
+window.onload=loadCookie;
+
+
+function main(){
+
+  onSubmit();
+  loadCookie();
 
 }
 
+main();
