@@ -1,0 +1,51 @@
+body {
+    background-color: rgb(197, 177, 177);
+    
+  }
+  
+  h1 {
+    color: rgb(29, 8, 8);
+    text-align: center;
+    text-shadow: 2px 2px;
+    font-family: fantasy;
+    font-size: 50px;
+    text-decoration: overline underline;
+  }
+  
+  form {
+    text-align: center;
+    font-family: fantasy;
+    font-size: 20px;
+  }
+  label {
+    display: inline-block;
+    width: 100px;
+    background-color: rgb(107, 76, 76);
+    border-radius: 5px;
+    
+}
+input, select {
+    padding: 8px;
+    margin: 12px;
+    width: 200px;
+    background-color: rgb(114, 81, 81);
+    font-family: fantasy;
+    font-size: 15px;
+    border-style: inset;
+}
+input:focus{
+    background-color: rgb(76, 49, 49);
+}
+select:focus{
+    background-color: rgb(76, 49, 49);
+}
+button {
+    background-color: rgb(76, 49, 49); 
+    font-family: fantasy;
+    font-size: 25px;
+    border-radius: 5px;
+}
+button:focus{
+    background-color: rgb(48, 12, 12);
+}
+

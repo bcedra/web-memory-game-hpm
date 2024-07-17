@@ -23,22 +23,12 @@ function onSubmit(){
 function main(){
 
   onSubmit();
-
+  loadCookie();
   
 }
 
 main();
 
-function checkDate() {
-  const today = new Date();
-  const dd = String(today.getDate()).padStart(2, '0');
-  const mm = String(today.getMonth() + 1).padStart(2, '0'); 
-  const yyyy = today.getFullYear();
-
-  const formattedDate = mm + '/' + dd + '/' + yyyy;
-
-  return formattedDate;
-}
 
 function setCookie(cname,cvalue,exdays) {
   const d = new Date();
@@ -62,3 +52,15 @@ function getCookie(cname) {
   }
   return "";
 }
+  function loadCookie() {
+    let cookieValue = getCookie(cookieKey);
+    if(cookieValue) {
+        let cookieObject = JSON.parse(cookieValue);
+        document.getElementById("username").value=cookieObject.name;
+        document.getElementById("date").value=cookieObject.date;
+        document.getElementById("element").value=cookieObject.category;
+    }
+    }
+  window.onload=loadCookie;
+
+  

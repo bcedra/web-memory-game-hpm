@@ -2,9 +2,7 @@
 <html>
 
 <head>
-    <style>
-
-    </style>
+    <h1>Cookie Test</h1>
         <link rel = "stylesheet" href = "index.css">
 
 </head>
@@ -12,29 +10,25 @@
 <body>
     <form id = "myForm">
         <div>
-            <label for="username">Name</label>
+            <label for="username">Name:</label>
             <input type="string" id="username" name="inputName" maxlength="30" required>
         </div>
         <div>
-            <label for="date">Date</label>
+            <label for="date">Date:</label>
             <input type="date" id="date" name="inputDate"  max="2024-07-17" required>
-        </div>
+
+            <label for="inputElements">Choose element:</label>
+            <select name="element" id="element" required>
+                <option value="fruits">Fruits</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="drinks">Drinks</option>
+            </select>
         
+        </div>
         <div><button type="submit">Submit</button></div>
     </form>
 
-    <div>
-    <label for="inputElements">Choose an element:</label>
-    <select name="element" id="element" form="carform">
-        <option value="fruits">Fruits</option>
-        <option value="vegetables">Vegetables</option>
-        <option value="drinks">Drinks</option>
-    </select>
-    </div>
     
-
+    
+    <script src = "index.js"></script>
 </body>
-
-<script src = "index.js"></script>
-
-</html>
