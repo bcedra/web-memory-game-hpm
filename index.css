@@ -1,29 +1,59 @@
+
 body {
-    background-image: linear-gradient(to left, rgb(0, 195, 255), rgb(240, 231, 240));
+    background-color: rgb(173, 236, 246);
+    animation-name: example;
+    animation-duration: 4s;
+  }
+  
+  @keyframes example {
+    from {background-color: rgb(173, 236, 246);}
+    to {background-color: rgb(233, 162, 209);}
+  }
 
-}
+  @keyframes example2 {
+    from {background-color: rgb(93, 116, 247);}
+    to {background-color: rgb(219, 44, 160);}
+  }
+  
 
+  #p2 {animation-timing-function: ease;}
+
+  
+  @keyframes mymove {
+    from {left: 0px;}
+    to {left: 710px;}
+  }
+
+  p2 {
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+    position: relative;
+    animation: mymove 5s;
+    animation-fill-mode: forwards;
+  } 
 
 p {
     text-align: center;
     color: black;
     font-size: 30px;
-    text-shadow: 2px 2px;
+    text-shadow: 2px 2px 4px gray;
 }
-
 
 button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #2906d6;
+    background-color: rgb(93, 116, 247);
+    animation-name: example2;
     color: white;
-    border: none;
+    border:rgb(from color r g b);
     border-radius: 4px;
-    box-shadow: 10px 10px;
+    box-shadow: 5px 5px;
+    transition-duration: 0.4s;
 }
 
 button:hover {
-    background-color: #2f2b4b;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 input[type=text],
@@ -50,7 +80,8 @@ select {
 
 input[type=submit] {
     width: 20%;
-    background-color: #604caf;
+    background-color: rgb(93, 116, 247);
+    animation-name: example2;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;

@@ -56,7 +56,7 @@ function getCookie(cname) {
 }
 
 function validateForm() {
-  let x = document.forms["myForm"]["fname"].value;
+  let x = document.forms["myForm"]["username"].value;
   if (x == "") {
     alert("Name must be filled out");
     return false;
