@@ -3,26 +3,29 @@
 
 <head>
     <style>
-        
+
     </style>
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
-    <p>Hello World!</p>
-    <h2>&#128512;</h2>
+    <p>&#128512;</p>
+    <form id="myForm">
+        <p><label for="input">Numar</label></p>
+        <p><select name="input" id="nb">
+                <option value="4">4</option>
+                <option value="6">6</option>
+                <option value="8">8</option>
+            </select>
+        </p>
+        <p><button type="submit">Submit</button></p>
 
-    <p class = "rectangle"></p>
-    <form myForm>
-        <p2><label for="inputNb">Numar</label></p2>
-        <input type="number" id="nb" name="Input" placeholder="Dati un nr. <= 5" max="5" min="0">
-        <button onclick="createTable()">OK</button>
-    
     </form>
-    <table id = "myTable"></table>
 
-    
+    <table id="myTable"></table>
+
+
     <script src="index.js"></script>
 
 </body>
