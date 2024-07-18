@@ -4,29 +4,34 @@
         <title>TASK 3</title>
         <link rel="stylesheet" href="index.css">
     </head>
-
+ 
     <body>
-        <h3>Task 3 - Form that stores user input into its fields with the use of cookies</h3>
+<!--        <h3>Task 3 - Form that stores user input into its fields with the use of cookies</h3>  -->
     
-        <div id="form">
+        <div class="form-container">
         <form id ="myForm">
+            <div class="form-display">
                 <label for="nameWritten">Name</label><br>
-                <input type="text" id="nameWritten" name="name" required><br>
-
+                <input type="text" id="nameWritten" name="name" maxlength="30"><br>
+                <span id="nameError" style="color: red; display: none;">Please write your name</span>
+            </div>
+            <div class="form-display">
                 <label for="birthDateValue">Birth date</label><br>
                 <input type="date" id="birthDateValue" name="Birthday" required><br>
-
+                <span id="errorDate" style="color: red; display: none;">Please enter a date from the past</span><br>
+            </div>
+            <div class="form-display">
                 <label for="category">Choose a category:</label><br>
-                <select name="category" id="category" required>
-                    <option value="chooseCategory">  --------</option>
+                <select name="category" id="category">
                     <option value="fruits">Fruits</option>
                     <option value="vegetables">Vegetables</option>
                     <option value="drinks">Drinks</option>
                 </select><br>
-
-                <button type="submit">Submit<br>
+            </div>
+                <div class="form-display"><button type="submit">Submit</button><br></div>
         </form>
-    </div>
+
+        <script src="index.js"></script>
     </body>
-    <script src="index.js"></script>
+
 </html>
