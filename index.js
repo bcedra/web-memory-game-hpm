@@ -67,10 +67,19 @@ main();
 function createTable() {
 
   var table = document.getElementById("myTable");
+  table.innerHTML = "";
 
   event.preventDefault();
+
   var sizeInput = document.getElementById("nb");
   var sizee = parseInt(sizeInput.value);
+  var nbCells = sizee * sizee;
+
+  var valCels = [];
+  for (var i = 1; i <= nbCells / 2; i++)
+    valCels.push(i, i);
+
+  valCels = shuffle(valCels);
 
   for (var i = 0; i < sizee; i++) {
     var rowData = [];
@@ -78,8 +87,10 @@ function createTable() {
 
     for (var j = 0; j < sizee; j++) {
       var cell = document.createElement("td");
-      const textnoder = document.createTextNode(i);
-      const textnodec = document.createTextNode(j);
+      //const textnoder = document.createTextNode(i);
+      //const textnodec = document.createTextNode(j);
+      var number = valCels.pop();
+      const textnode = document.createTextNode(number);
 
       var img = document.createElement('img');
       img.src = "Images/1.jpeg";
@@ -94,8 +105,8 @@ function createTable() {
       cell.appendChild(img);
 
       row.appendChild(cell);
-      cell.append(textnoder);
-      cell.append(textnodec);
+      cell.append(textnode);
+      //cell.append(textnodec);
     }
     table.appendChild(row);
     tableData.push(rowData);
@@ -103,5 +114,15 @@ function createTable() {
 
 }
 
+
+function shuffle(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
 
 
