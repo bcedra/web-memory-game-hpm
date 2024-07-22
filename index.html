@@ -2,21 +2,29 @@
 <html>
 
 <head>
-    <style>
-        p {
-            color: red;
-            text-align: left;
-            font-size: 25px;
-        }
-    </style>
+   
 </head>
-
+<link rel="stylesheet" type="text/css" href="index.css" />
 <body>
 
-    <p>Hello World!</p>
-    <p>These paragraphs are styled with CSS.</p>
-    <p>testIulia</p>
+    <form id="myForm">
+        <div> 
+            <label for="number">Numar:</label>
+            <select name="number" id="number">
+                <option value="4">4</option>
+                <option value="6">6</option>
+                <option value="8">8</option>
+            </select>
+        </div>
+        <div><button type="submit" id="submit">Submit</button></div>
+    </form>
+    <div id="container"></div>
+    
+   <table id="myTable">
 
+   </table>
+    
+<script src="index.js"></script>
 </body>
 
 </html>

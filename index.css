@@ -1,0 +1,84 @@
+body{
+    background-color: rgb(160, 156, 164);
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: none;
+}
+
+table {
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+}
+
+form {
+    text-align: center;
+    font-family: fantasy;
+    font-size: 30px;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    background-color: rgb(149, 125, 172);
+    border-radius: 5px;
+}
+
+select {
+    padding: 8px;
+    margin: 12px;
+    width: 10%;
+    background-color: rgb(149, 125, 172);
+    font-family: fantasy;
+    font-size: 15px;
+    border-style: inset;
+}
+
+button {
+    background-color: rgb(149, 125, 172);
+    font-family: fantasy;
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+.flipCard {
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    perspective: 1000px; 
+    margin: 5px;
+}
+
+.flipCard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flipCard:hover .flipCard-inner {
+    transform: rotateY(180deg);
+}
+
+.flipCard-front, .flipCard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+}
+
+.flipCard-front {
+    background-color: #bbb;
+    color: black;
+}
+
+.flipCard-back {
+    background-color: rgb(201, 190, 203);
+    color: white;
+    transform: rotateY(180deg);
+}
