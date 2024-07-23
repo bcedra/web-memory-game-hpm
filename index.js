@@ -4,9 +4,11 @@ document.getElementById("submit").addEventListener("click", function(event) {
     var container=document.getElementById("container");
     container.innerHTML=``;
 
-    var table=document.getElementById("myTable");
-    var row=document.getElementById("number").value;
-    var col=document.getElementById("number").value;
+    var row=parseInt(document.getElementById("number").value);
+    var col=parseInt(document.getElementById("number").value);
+
+    var table=document.createElement("table");
+    table.id="myTable";
 
 
     for(var ri=0; ri<row; ri++) {
@@ -43,3 +45,4 @@ document.getElementById("submit").addEventListener("click", function(event) {
     }
     container.appendChild(table);
 });
+
