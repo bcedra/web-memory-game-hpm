@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <head> 
+        <title>TASK 4</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+ 
+    <body>
+        <div class="card-game">
+            <form id="myForm">
+                <div class="form-display">
+                    <label for="size-selection">Select the number of rows and columns</label>
+                    <select name="size-selection" id="size-selection">
+                        <option value="4"> 4 </option>
+                        <option value="6"> 6 </option>
+                        <option value="8"> 8 </option>
+                    </select> 
+                <button type="submit">Start game!</button><br></div>
+            </form>
+        </div>
 
-<head>
-    <style>
-        p {
-            color: red;
-            text-align: left;
-            font-size: 25px;
-        }
-    </style>
-</head>
-
-<body>
-
-    <p>Hello World!</p>
-    <p>These paragraphs are styled with CSS.</p>
-    <p>testIulia</p>
-    <p>test1</p>
-
-</body>
+        <div class="card-table">
+            <table id=myTable></table>
+        </div>
+        <script src="index.js"></script>
+    </body>
 
 </html>
