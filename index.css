@@ -1,5 +1,9 @@
 body {
     background-image: linear-gradient(to top, #80ffd4, #c3faea);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 form {

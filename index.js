@@ -28,7 +28,7 @@ function createTable() {
 
             var cardFront = document.createElement('div');
             cardFront.className = "card-face card-front";
-            cardFront.innerHTML = `<img src="im8.jpg" style=";width: 100%;height: 100%; 
+            cardFront.innerHTML = `<img src="im8.png" style=";width: 100%;height: 100%; 
             border-radius: 6px;border-style: solid;border-width: 0px;">`;
 
             var cardBack = document.createElement("div");
@@ -56,7 +56,7 @@ function shuffle(array) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = array[i];
         array[i] = array[j];
-        array[j] = temp;
+        array[j] = temp; 
     }
     return array;
 }
