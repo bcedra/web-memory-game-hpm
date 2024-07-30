@@ -13,7 +13,7 @@ function createTable() {
 
   event.preventDefault();
 
-  var sizeInput = document.getElementById("nb");
+  var sizeInput = document.getElementById("nb");  
   var sizee = parseInt(sizeInput.value);
   var nbCells = sizee * sizee;
 
@@ -31,17 +31,33 @@ function createTable() {
       var cell = document.createElement("td");
       
       var number = valCels.pop();
+
+      var card = document.createElement("div");
+      card.classList.add("card");
+
+      var flip = document.createElement("div");
+      flip.classList.add("flip");
+
+      var front = document.createElement("div");
+      front.classList.add("front");
+      const textnodef = document.createTextNode("Click");
+      front.append(textnodef);
+
+      var back = document.createElement("div");
+      back.classList.add("back");
       const textnode = document.createTextNode(number);
+      back.append(textnode);
 
-      var img = document.createElement('img');
-      img.src = "Images/1.jpeg";
+      flip.appendChild(front);
+      flip.appendChild(back);
+      card.appendChild(flip);
 
-      img.setAttribute("width", "100");
-      img.setAttribute("height", "100");
-      cell.appendChild(img);
-
+      cell.appendChild(card);
       row.appendChild(cell);
-      cell.append(textnode);
+      
+      flip.addEventListener("click", function(){
+        this.classList.toggle("flipped");
+      });
 
     }
     table.appendChild(row);

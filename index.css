@@ -1,31 +1,12 @@
+body{
+  background-image: linear-gradient(to left, rgb(0, 195, 255) , rgb(240, 231, 240));
+}
 
-
-p2 {
-  width: 100px;
-  height: 50px;
-  font-weight: bold;
-  position: relative;
-  animation: mymove 5s;
-  animation-fill-mode: forwards;
-} 
-
-p {
+p{
   text-align: center;
   color: black;
   font-size: 30px;
   text-shadow: 2px 2px 4px gray;
-}
-
-body{
-  background-image: linear-gradient(to left, rgb(0, 195, 255) , rgb(240, 231, 240));
- 
-}
-
-#sizee{
-  padding : 10px;
-  margin-right: 10px;
-  border-radius: 5 px;
-  border : 1 px solid white;
 }
 
 #myTable{
@@ -45,7 +26,6 @@ img{
   height : 100px;
   opacity : 0.9;
 }
-
 
 input[type=number], select {
   width: 200px;
@@ -67,38 +47,49 @@ td {
   perspective: 1000px;
 }
 
-td:hover{
+td:hover {
   opacity: 0.4;
 }
 
-.card{
+.card {
+  background-color: transparent;
   width : 100px;
   height: 100px;
+  perspective: 1000px;
+}
+
+.flip{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  transition: transform 0.6s;
   transform-style: preserve-3d;
-  transition: 0.6s;
 }
 
-.card.flipped{
-  transform: rotateX(180deg);
+.flip.flipped {
+  transform: rotateY(180deg);
 }
 
-.card.front,
-.card.back{
+.front,
+.back {
   width: 100px;
   height: 100px;
   backface-visibility: hidden;
-  display : flex;
+  -webkit-backface-visibility: hidden;
+  display: flex;
   justify-content: center;
-  border: 1px solid #ccc;
+  align-items: center;
+  position:absolute;
 }
 
-card .front {
+.front {
   background-color: white;
 }
 
-.card .back {
+.back {
   background-color: lightblue;
-  transform: rotateX(180deg);
+  transform: rotateY(180deg);
 }
 
 button {
