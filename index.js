@@ -1,8 +1,6 @@
-var imgAr = ["Images/1.jpeg", "Images/2.jpeg", "Images/3.jpeg", "Images/4.jpeg", "Images/5.jpeg"];
-function imgRandom(imgArr) {
-  return imgArr[Math.floor(Math.random() * imgArr.length)];
-}
-
+var imgAr = ["Fruits/1.png", "Fruits/2.png", "Fruits/3.png", "Fruits/4.png", "Fruits/5.png",
+  "Fruits/6.png", "Fruits/7.png", "Fruits/8.png", "Fruits/9.png", "Fruits/10.png",
+  "Fruits/11.png", "Fruits/12.png", "Fruits/13.png", "Fruits/14.png", "Fruits/15.png", "Fruits/16.png"];
 
 var tableData = [];
 
@@ -13,13 +11,15 @@ function createTable() {
 
   event.preventDefault();
 
-  var sizeInput = document.getElementById("nb");  
+  var sizeInput = document.getElementById("nb");
   var sizee = parseInt(sizeInput.value);
   var nbCells = sizee * sizee;
 
   var valCels = [];
-  for (var i = 1; i <= nbCells / 2; i++)
+  for (var i = 1; i <= nbCells / 2; i++) {
     valCels.push(i, i);
+  }
+
 
   valCels = shuffle(valCels);
 
@@ -29,7 +29,7 @@ function createTable() {
 
     for (var j = 0; j < sizee; j++) {
       var cell = document.createElement("td");
-      
+
       var number = valCels.pop();
 
       var card = document.createElement("div");
@@ -40,11 +40,16 @@ function createTable() {
 
       var front = document.createElement("div");
       front.classList.add("front");
-      const textnodef = document.createTextNode("Click");
-      front.append(textnodef);
 
       var back = document.createElement("div");
       back.classList.add("back");
+
+      var img = document.createElement("img");
+      img.src = imgAr[number];
+      img.setAttribute("width", "100");
+      img.setAttribute("height", "100");
+      back.appendChild(img);
+
       const textnode = document.createTextNode(number);
       back.append(textnode);
 
@@ -54,8 +59,8 @@ function createTable() {
 
       cell.appendChild(card);
       row.appendChild(cell);
-      
-      flip.addEventListener("click", function(){
+
+      flip.addEventListener("click", function () {
         this.classList.toggle("flipped");
       });
 
@@ -65,7 +70,6 @@ function createTable() {
   }
 
 }
-
 
 function shuffle(array) {
   for (var i = array.length - 1; i > 0; i--) {
