@@ -13,26 +13,30 @@
 
     <p2>Main Menu</p2>
 
-    <ul>
-        <li>
-            <button class="collapsible"><i class="fa fa-user-circle-o" style="font-size:47px;color:black"></i></button>
-            <div class="content">
-                <p><a href="profileSettings.html"> Profile Settings</a></p>
-            </div>
-        </li>
-        <li>
-            <button class="collapsible"><i class="fa fa-gears" style="font-size:43px;color:red"></i></button>
-            <div class="content">
-                <p><a href="gameSettings.html"> Game Settings</a></p>
-            </div>
-        </li>
-        <li>
-            <button class="collapsible"><i class="fa fa-star" style="font-size:49px;color:rgb(255, 0, 255)"></i></button>
-            <div class="content">
-                <p><a href="play.html">Play!</a></p>
-            </div>
-        </li>
-    </ul>
+    <div class="w3-sidebar w3-dark-grey w3-animate-left" style="display:none" id="SidebarProfileSettings">
+        <button class="fa fa-user-circle-o" style="font-size:47px;color:black"
+        onclick="w3_close()"><a href="profileSettings.html">Profile Settings</a> &times;</button>
+    </div>
+    <div>
+        <button class="fa fa-user-circle-o" style="font-size:47px;color:black" onclick="w3_open()"></button>
+    </div>
+
+    <div class="w2-sidebar w2-dark-grey w2-animate-left" style="display:none" id="SidebarGameSettings">
+        <button class="fa fa-gears" style="font-size:43px;color:red"
+        onclick="w2_close()"><a href="gameSettings.html">Game Settings</a>&times;</button>
+    </div>
+    <div>
+        <button class="fa fa-gears" style="font-size:43px;color:red" onclick="w2_open()"></button>
+    </div>
+
+    <div class="w1-sidebar w1-dark-grey w1-animate-left" style="display:none" id="SidebarPlay">
+        <button class="fa fa-star" style="font-size:49px;color:rgb(255, 0, 255)"
+        onclick="w1_close()"><a href="play.html">Play</a>&times;</button>
+    </div>
+    <div>
+        <button class="fa fa-star" style="font-size:49px;color:rgb(255, 0, 255)" onclick="w1_open()"></button>
+    </div>
+
 
     <script src="index.js"></script>
 

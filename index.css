@@ -51,3 +51,39 @@ body{
 .active:after {
   content: ' \003C';
 }
+
+div{
+  padding: auto;
+}
+
+.w3-sidebar {
+  width: 400px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 1s;
+  padding-top: 43px;
+}
+
+.w2-sidebar {
+  width: 400px;
+  height: 100%;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+  padding-top: 96px;
+}
+
+.w1-sidebar {
+  width: 400px;
+  height: 100%;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+  padding-top: 144px;
+}
