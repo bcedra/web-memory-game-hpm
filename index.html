@@ -1,23 +1,41 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <style>
-        p {
-            color: red;
-            text-align: left;
-            font-size: 25px;
-        }
-    </style>
+    <title>TASK 5</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/6d689ccaad.js" crossorigin="anonymous"></script>
+
 </head>
-
 <body>
+    <div class="menu">
+        <button class="menu-toggle">Expand/<br>Collapse</button>
+            <div class="menu-content">
+                <div class="uConfig">
+                    <a href="#"><i class="fa-solid fa-user"></i><span class="menu-text">User configuration</span></a>
+                </div>
+                <div class="gSettgs">
+                    <a href="#"><i class="fa fa-gears" id="settings-icon"></i><span>Game configuration</span></a>
+                </div>
+                <div class="gameStrt">
+                    <a href="#"><i class="fa-solid fa-gamepad" id="play-icon"></i><span>PLAY!</span></a>
+                </div>
+            </div>
+            <div class="menu-content-icons">
+                <div class="uConfigIcon"><a href="#"><i class="fa-solid fa-user"></i></a></div>
+                <div class="gSettgsIcon"><a href="#"><i class="fa fa-gears" id="settings-icon"></i></a></div>
+                <div class="gameStrtIcon"><a href="#"><i class="fa-solid fa-gamepad" id="play-icon"></i></a></div>
+            </div>
+        <div class="userConfigMenu">
+            <h1>USER CONFIGURATION</h1>
+        </div>
+        <div class="gameSettingsMenu">
+            <h1>GAME SETTINGS</h1>
+        </div>
+        <div class="playButton">
+            <h1>PLAY!</h1>
+        </div>
+    </div>
 
-    <p>Hello World!</p>
-    <p>These paragraphs are styled with CSS.</p>
-    <p>testIulia</p>
-    <p>test1</p>
-
+    <script src="index.js"></script>
 </body>
-
 </html>

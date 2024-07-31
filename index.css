@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander&display=swap");
+body {
+  font-family: "Grandstander";
+}
+
+body {
+    background-color: #EFC89B;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    min-height: 100vh;
+}
+
+button {
+    margin-left: 5px;
+    margin-top: 20px;
+    border: transparent;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    background-color: #FBF4E2;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #d7b57e;
+    color: #FBF4E2;
+}
+
+i {
+    width: 50px;
+    height: 50px;
+    color: black;
+}
+
+.menu-content {
+    display: none;
+}
+
+.menu-content.withText{
+    display: flex;
+    flex-direction: column;
+    line-height: 50px;
+    width: 350px;
+    margin-top: 5vh;
+    padding-left: 5px;
+    font-size: x-large;
+    color: black;
+    background-color: #f7d8b5;
+    vertical-align: middle;
+
+}
+
+h1 {
+    padding: 250px;
+}
+
+span {
+    position: fixed;
+    height: 50px;
+    line-height: 50px;
+    color: black;
+    text-decoration: none;
+    
+}
+
+span:hover {
+    color: #f7d8b5;
+}
+
+
+.menu-content-icons {
+    display:none;
+    line-height: 50px;
+    flex-direction: column;
+    height: 100%;
+    width:40px;
+    margin-left:3px;
+    margin-top: 5vh;
+    padding: 5px;
+    font-size: x-large;
+    background-color: #FBF4E2;
+}
+
+.userConfigMenu {
+    display: none;
+    background-color: #EFC89B;
+    width: 75%;
+    height: 100%;
+    position: absolute;
+    left: 350px;
+    top: 0px;
+}
+
+.gameSettingsMenu {
+    display: none;
+    background-color: #EFC89B;
+    width: 75%;
+    height: 100%;
+    position: absolute;
+    left: 350px;
+    top: 0px;
+}
+
+.playButton {
+    display: none;
+    background-color: #EFC89B;
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    left: 350px;
+    top: 0px;
+} 
+
+.uConfig:hover , .gSettgs:hover, .gameStrt:hover {
+    background-color: #CFA683 ;
+    margin-left: 0px;
+}
+
+.uConfigIcon:hover , .gSettgsIcon:hover, .gameStrtIcon:hover {
+    background-color: #CFA683 ;
+    margin-left: 0%;
+    color: #f7d8b5;
+}
+
+.gSettgs, .gameStrt {
+    border-bottom: #CFA683;
+    border-width: 1px;
+    border-style: solid;
+    border-left: transparent;
+    border-top: transparent;
+}
+
+.uConfig {
+    border-top: #CFA683;
+    border-bottom: #CFA683;
+    border-width: 1px;
+    border-style: solid;
+    border-left: transparent;
+
+}
