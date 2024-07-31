@@ -139,3 +139,11 @@ span:hover {
     border-left: transparent;
 
 }
+/*
+.uConfig:focus-within{
+    background-color: red;
+} */
+
+.uConfig.active {
+    background-color: red;
+}

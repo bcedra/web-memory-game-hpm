@@ -87,10 +87,17 @@ const playButtonConstIcon = document.querySelector(".gameStrtIcon");
         switchMenu('playButton');
     });
 
-
 window.addEventListener("load", function() {
     const openedMenu = this.localStorage.getItem("openedMenu");
     if (openedMenu) {
         switchMenu(openedMenu);
     }
 });
+
+userConfigMenuConst.addEventListener("click", function() {
+    userConfigMenuConst.classList.toggle("active");
+});
+    if (userConfigMenuConst.classList.contains("active")) {
+        localStorage.setItem("active", "true");
+        document.querySelector(".uConfig").style.color="red"
+    }
