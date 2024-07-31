@@ -1,0 +1,18 @@
+{
+	"name": "web-memory-game-hpm",
+	"version": "1.0.0",
+	"description": "A web-based implementation of the classic Memory Game, designed for educational purposes. This project leverages modern web technologies to create an engaging and interactive learning experience.",
+	"main": "index.js",
+	"scripts": {
+		"start": "live-server src --port=8082",
+		"prettier:format": "prettier --write \"src/**/*.{js,html,css}\"",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "[Tania Souca, Ana Turc, Iulia Hanganu]",
+	"license": "ISC",
+	"devDependencies": {
+		"live-server": "^1.2.2",
+		"prettier": "^3.3.3"
+	}
+}
