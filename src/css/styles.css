@@ -1,8 +1,27 @@
 body {
+	background-image: linear-gradient(to left, rgb(0, 195, 255) , rgb(240, 231, 240));
 	font-family: Arial, sans-serif;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 	margin: 0;
+}
+
+.container {
+	display: inline-grid;
+  }
+
+.item-a {
+	grid-column-start: 2;
+	grid-column-end: five;
+	grid-row-start: row1-start;
+	grid-row-end: 3;
+}
+
+.item-list{
+	display:grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+
 }
