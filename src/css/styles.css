@@ -1,8 +1,49 @@
 body {
-	font-family: Arial, sans-serif;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	margin: 0;
+	background-color: #ffd187;
+	font-family: Arial;
+}
+
+* {
+	box-sizing: border-box;
+}
+input[type='text'] {
+	padding: 10px;
+	font-size: 17px;
+	border: 1px solid grey;
+	float: left;
+	width: 80%;
+	background: #f1f1f1;
+}
+button {
+	float: left;
+	width: 20%;
+	height: 15%;
+	padding: 10px;
+	background: #d4992c;
+	color: white;
+	font-size: 17px;
+	border: 1px solid rgb(184, 146, 69);
+	border-left: none;
+	cursor: pointer;
+}
+button:hover {
+	color: #92784c;
+}
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	width: 75vw;
+	margin: 0 auto;
+	height: 100%;
+	text-align: center;
+	padding: 5px;
+	font-weight: bold;
+	color: rgb(123, 86, 6);
+	text-decoration: underline;
+}
+
+#search-bar {
+	margin: auto;
+	max-width: 300px;
 }
