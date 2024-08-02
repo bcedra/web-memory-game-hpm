@@ -8,17 +8,12 @@
 	</head>
 
 	<body>
-		<div class="container">
-			<div class="item-a">
-				<label for="ro_language">Ro</label>
-  				<input type="radio" id="ro_language" name="fav_language" value="Ro">
- 				<label for="css">En</label>
- 				<input type="radio" id="en_language" name="fav_language" value="En"><br>
-				<input type="text" id="search" name="search" placeholder="search" style="font-size: 24px">
-				<button id="searchbtn" style='font-size:24px'>&#128269; </button><br>
-				<div class="item-list" id="list"></div>
-			</div>
+		<div>
+			<input type="text" id="searchInput" name="search" placeholder="search" />
+			<button id="searchbtn">&#128269;</button><br />
 		</div>
+		<div id="grid-container"></div>
+		<div id="no-data-message" class="error" data-translate="NoData" hidden="true"></div>
 
 		<script type="module" src="js/main.js"></script>
 	</body>

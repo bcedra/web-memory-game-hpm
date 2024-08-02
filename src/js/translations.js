@@ -24,9 +24,9 @@ function updateTextContent(translations) {
 }
 
 // Function to initialize translations
-export async function initializeTranslations(language) {
-	//const userLanguage = navigator.language.split('-')[0];
-	//const language = ['en', 'ro'].includes(userLanguage) ? userLanguage : DEFAULT_LANGUAGE;
+export async function initializeTranslations() {
+	const userLanguage = navigator.language.split('-')[0];
+	const language = ['en', 'ro'].includes(userLanguage) ? userLanguage : DEFAULT_LANGUAGE;
 
 	const translations = await loadTranslations(language);
 	updateTextContent(translations);
