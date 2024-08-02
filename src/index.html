@@ -5,11 +5,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>web-memory-game-hpm</title>
 		<link rel="stylesheet" href="css/styles.css" />
+		<script src="https://kit.fontawesome.com/6d689ccaad.js" crossorigin="anonymous"></script>
 	</head>
 
 	<body>
-		<div data-translate="HelloWorld"></div>
-
+		<!--<div data-translate="HelloWorld"></div> -->
+		<div class="search-container">
+			<form id="search-form">
+				<input type="text" class="input" id="inputWord" placeholder="Search" />
+				<button type="submit" id="searchButton"><i class="fa-duotone fa-solid fa-magnifying-glass"></i></button>
+			</form>
+		</div>
+		<div class="item-list" id="list"></div>
 		<script type="module" src="js/main.js"></script>
 	</body>
 </html>

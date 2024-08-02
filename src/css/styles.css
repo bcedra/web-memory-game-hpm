@@ -1,8 +1,50 @@
 body {
 	font-family: Arial, sans-serif;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 	margin: 0;
+}
+
+input {
+	width: 300px;
+	border-style: solid;
+	border-width: 1px;
+	height: 25px;
+	border-radius: 3px;
+}
+
+button {
+	width: 40px 40px;
+	border-style: solid;
+	border-width: 1px;
+	height: 25px;
+	border-radius: 3px;
+}
+
+.item-list {
+	margin-top: 50px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+}
+
+.inner-divs {
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(175, 171, 171);
+	padding: 13px;
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: rgb(160, 160, 160);
+}
+
+button:active {
+	cursor: pointer;
+	background-color: rgb(61, 61, 61);
+	color: white;
 }

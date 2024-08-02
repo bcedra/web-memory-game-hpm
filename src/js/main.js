@@ -1,9 +1,10 @@
 'use strict';
 
 import { initializeTranslations } from './translations.js';
+import { addSearchListener, doSearch } from './search.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 	initializeTranslations();
-
-	console.log('Hello World!');
+	doSearch();
+	addSearchListener();
 });
