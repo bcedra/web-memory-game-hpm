@@ -15,6 +15,20 @@ document.addEventListener('DOMContentLoaded', () => {
 	getData().then(data => {
 		displayOperators(data.value)
 	});
+
+	var ro = document.getElementById("ro_language");
+	var en = document.getElementById("en_language");
+  
+	if(ro.checked == true){
+	  initializeTranslations('ro');
+	} 
+	else if(en.checked == true){
+	  initializeTranslations('en');
+	}
+	else{
+	  //ceva default
+	  initializeTranslations('en');
+	}
 	
 	console.log('Hello World!');
 });
