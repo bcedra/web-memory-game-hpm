@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Settings page</title>
+		<h1>Settings</h1>
+		<!--<link rel="stylesheet" href="css/styles.css" /> -->
+	</head>
+
+	<body>
+		<div class="settingsMenuOptions">
+			<form id="settingsForm">
+				<div data-translate="Language" id="langSelDiv">
+					Language
+					<select class="settingsDropdowns" id="languageSelector">
+						<option value="english">English</option>
+						<option value="romanian">Română</option>
+					</select>
+				</div>
+				<div data-translate="Difficulty" id="difficultySelDiv">
+					Difficulty
+					<select class="settingsDropdowns" id="difficultySelector">
+						<option value="easy">Easy</option>
+						<option value="medium">Medium</option>
+						<option value="hard">Hard</option>
+					</select>
+				</div>
+				<div data-translate="Category" id="categSelDiv">Category
+				<select class="settingsDropdowns" id="categorySelector">
+					<option value="1">1</option>
+				</select>
+                </div>
+
+                <div data-translate="Buttons">
+                    <button type="submit" id="saveButton">Save changes</button>
+			    </div>
+            </form>
+		</div>
+		<!--<script type="module" src="js/main.js"></script> -->
+	</body>
+</html>
