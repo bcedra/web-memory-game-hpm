@@ -1,3 +1,10 @@
 {
-    "HelloWorld": "Hello World!"
+    "Language": "Language",
+    "Difficulty": "Difficulty",
+    "Easy": "Easy",
+    "Medium": "Medium",
+    "Hard": "Hard",
+    "Category": "Category",
+    "Back":"Back",
+    "Settings": "Settings"
 }

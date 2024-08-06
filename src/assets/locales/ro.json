@@ -1,3 +1,10 @@
 {
-    "HelloWorld": "Salut Lume!"
+    "Language": "Limbă",
+    "Difficulty": "Dificultate",
+    "Easy": "Ușoară",
+    "Medium": "Medie",
+    "Hard": "Grea",
+    "Category": "Categorie",
+    "Back": "Înapoi",
+    "Settings": "Setări"
 }

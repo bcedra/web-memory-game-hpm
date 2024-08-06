@@ -1,9 +1,11 @@
 'use strict';
 
 import { initializeTranslations } from './translations.js';
+import { saveLanguageChoice, saveDifficultyChoice, saveCategoryChoice } from './settings.js'
 
 document.addEventListener('DOMContentLoaded', () => {
 	initializeTranslations();
-
-	console.log('Hello World!');
+	saveLanguageChoice();
+	saveDifficultyChoice();
+	saveCategoryChoice();
 });
