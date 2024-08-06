@@ -1,3 +1,9 @@
 {
-    "HelloWorld": "Salut Lume!"
+	"HelloWorld": "Salut Lume!",
+	"EnterName": "Introdu numele tau: ",
+	"SelectAvatar": "Selecteaza avatarul: ",
+	"Av1": "Avatarul 1",
+	"Av2": "Avatarul 2",
+	"Av3": "Avatarul 3",
+	"Start": "Incepe"
 }

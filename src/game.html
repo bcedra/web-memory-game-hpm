@@ -9,18 +9,18 @@
 
 	<body>
 		<div>
-			<label for="name-label">Enter your name here: </label>
+			<label for="name-label" data-translate="EnterName">Enter your name here: </label>
 			<input type="text" id="name" />
 		</div>
 		<div class="avatar-group">
-			<label for="avatar">Select your avatar: </label>
+			<label for="avatar" data-translate="SelectAvatar">Select your avatar: </label>
 			<select id="avatar" name="avatar">
-				<option value="avatar1">Avatar1</option>
-				<option value="avatar2">Avatar2</option>
-				<option value="avatar3">Avatar3</option>
+				<option value="avatar1" data-translate="Av1">Avatar1</option>
+				<option value="avatar2" data-translate="Av2">Avatar2</option>
+				<option value="avatar3" data-translate="Av3">Avatar3</option>
 			</select>
 		</div>
-		<div><button type="button" onclick="start()">START</button></div>
+		<div><button type="button" onclick="start()" data-translate="Start">START</button></div>
 
 		<script type="module" src="js/main.js"></script>
 	</body>

@@ -1,3 +1,9 @@
 {
-    "HelloWorld": "Hello World!"
+	"HelloWorld": "Hello World!",
+	"EnterName": "Enter your name here: ",
+	"SelectAvatar": "Select your avatar: ",
+	"Av1": "Avatar 1",
+	"Av2": "Avatar 2",
+	"Av3": "Avatar 3",
+	"Start": "Start"
 }
