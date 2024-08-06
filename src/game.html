@@ -8,20 +8,45 @@
 	</head>
 
 	<body>
-		<div>
+		<div id="setup-screen">
 			<label for="name-label" data-translate="EnterName">Enter your name here: </label>
 			<input type="text" id="name" />
-		</div>
-		<div class="avatar-group">
-			<label for="avatar" data-translate="SelectAvatar">Select your avatar: </label>
-			<select id="avatar" name="avatar">
-				<option value="avatar1" data-translate="Av1">Avatar1</option>
-				<option value="avatar2" data-translate="Av2">Avatar2</option>
-				<option value="avatar3" data-translate="Av3">Avatar3</option>
-			</select>
-		</div>
-		<div><button type="button" onclick="start()" data-translate="Start">START</button></div>
 
+			<div class="avatar-group">
+				<label for="avatar" data-translate="SelectAvatar">Select your avatar: </label>
+				<select id="avatar" name="avatar">
+					<option value="avatar1" data-translate="Av1">Avatar1</option>
+					<option value="avatar2" data-translate="Av2">Avatar2</option>
+					<option value="avatar3" data-translate="Av3">Avatar3</option>
+				</select>
+			</div>
+			<div><button type="button" id="start-button" onclick="start()" data-translate="Start">START</button></div>
+		</div>
+		<div id="game-screen" style="display: none">
+			<div class="game-header">
+				<button id="exit-button" data-translate="Exit">&lt;</button>
+				<button id="replay-button" data-translate="Replay">Replay</button>
+				<div id="timer" class="timer" data-translate="Timer">00:00</div>
+				<div class="user-info">
+					<img id="user-avatar" src="" alt="Avatar" />
+					<span id="username"></span>
+				</div>
+			</div>
+			<div class="game-board"><!-- matrix --></div>
+		</div>
 		<script type="module" src="js/main.js"></script>
+
+		<script>
+			document.getElementById('start-button').addEventListener('click', () => {
+				const ursername = document.getElementById('name').value;
+				const avatar = document.getElementById('avatar').value;
+				if (username && avatar) {
+					document.getElementById('username').textContent = username;
+					document.getElementById('user-avatar').src = 'path/to/${avatar}.png';
+					document.getElementById('setup-screen').style.display = 'none';
+					document.getElementById('game-screen').style.display = 'block';
+				}
+			});
+		</script>
 	</body>
 </html>

@@ -5,5 +5,8 @@
 	"Av1": "Avatar 1",
 	"Av2": "Avatar 2",
 	"Av3": "Avatar 3",
-	"Start": "Start"
+	"Start": "Start",
+	"Timer": "Timer",
+	"Exit": "Exit",
+	"Replay": "Replay"
 }
