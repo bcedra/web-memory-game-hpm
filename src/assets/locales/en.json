@@ -1,12 +1,14 @@
 {
+	"HelloWorld": "Hello World!",
     "Language": "Language",
     "Difficulty": "Difficulty",
-    "Easy": "Easy",
     "Medium": "Medium",
+    "Easy": "Easy",
     "Hard": "Hard",
-    "Category": "Category",
     "Back":"Back",
+    "Category": "Category",
     "en": "English",
     "ro": "Romanian",
-    "Settings": "Settings"
+    "Settings": "Settings",
+	"Play": "Play!"
 }

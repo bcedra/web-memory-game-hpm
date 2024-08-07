@@ -1,4 +1,5 @@
 {
+	"HelloWorld": "Salut Lume!",
     "Language": "Limbă",
     "Difficulty": "Dificultate",
     "Easy": "Ușoară",
@@ -8,5 +9,6 @@
     "Back": "Înapoi",
     "en": "Engleză",
     "ro": "Română",
-    "Settings": "Setări"
+    "Settings": "Setări",
+	"Play": "Joacă!"
 }
