@@ -1,3 +1,13 @@
+'use strict';
+
+import { initializeTranslations } from './translations.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+	initializeTranslations();
+
+	addStartListeners();
+});
+
 let timerInterval;
 let sec = 0;
 let min = 0;
