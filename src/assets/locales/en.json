@@ -1,3 +1,5 @@
 {
-    "HelloWorld": "Hello World!"
+	"HelloWorld": "Hello World!",
+	"Play": "Play!",
+	"Settings": "Settings"
 }
