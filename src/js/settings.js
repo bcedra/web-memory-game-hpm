@@ -1,11 +1,11 @@
-export function saveLanguageChoice() {
-	// does not change the language atm but the value is saved
+function saveLanguageChoice() {
+	// TODO: change the game language based on the value of languageSelector
 	const languageSelector = document.getElementById('languageSelector');
 
 	let settingsJSON = JSON.parse(localStorage.getItem('settingsJSON')) || {};
 
 	if (!settingsJSON.langSelected) {
-		settingsJSON.langSelected = 'english';
+		settingsJSON.langSelected = 'en';
 		localStorage.setItem('settingsJSON', JSON.stringify(settingsJSON));
 	}
 
@@ -26,7 +26,7 @@ export function saveLanguageChoice() {
 	};
 }
 
-export function saveDifficultyChoice() {
+function saveDifficultyChoice() {
 	let settingsJSON = JSON.parse(localStorage.getItem('settingsJSON')) || {};
 
 	if (!settingsJSON.difficultySelected) {
@@ -51,7 +51,7 @@ export function saveDifficultyChoice() {
 	};
 }
 
-export function saveCategoryChoice() {
+function saveCategoryChoice() {
 	let settingsJSON = JSON.parse(localStorage.getItem('settingsJSON')) || {};
 
 	if (!settingsJSON.categorySelected) {
@@ -74,4 +74,10 @@ export function saveCategoryChoice() {
 		const storedSettings = JSON.parse(localStorage.getItem('settingsJSON'));
 		console.log(storedSettings.categorySelected);
 	};
+}
+
+export function addInputsChangeEvents() {
+	saveLanguageChoice();
+	saveDifficultyChoice();
+	saveCategoryChoice();
 }
