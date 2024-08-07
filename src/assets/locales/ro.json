@@ -1,5 +1,14 @@
 {
 	"HelloWorld": "Salut Lume!",
-	"Play": "Joacă!",
-	"Settings": "Setări"
+    "Language": "Limbă",
+    "Difficulty": "Dificultate",
+    "Easy": "Ușoară",
+    "Medium": "Medie",
+    "Hard": "Grea",
+    "Category": "Categorie",
+    "Back": "Înapoi",
+    "en": "Engleză",
+    "ro": "Română",
+    "Settings": "Setări",
+	"Play": "Joacă!"
 }

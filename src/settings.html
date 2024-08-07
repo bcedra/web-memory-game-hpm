@@ -4,39 +4,40 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Settings page</title>
-		<h1>Settings</h1>
-		<!--<link rel="stylesheet" href="css/styles.css" /> -->
+		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 
 	<body>
-		<div class="settingsMenuOptions">
-			<form id="settingsForm">
+        <h1 data-translate="Settings">Settings</h1>
+        <div class="settingsMenuOptions">
 				<div data-translate="Language" id="langSelDiv">
 					Language
+                </div>
 					<select class="settingsDropdowns" id="languageSelector">
-						<option value="english">English</option>
-						<option value="romanian">Română</option>
+						<option data-translate="en" value="en">English</option>
+						<option data-translate="ro" value="ro">Romanian</option>
 					</select>
-				</div>
+
 				<div data-translate="Difficulty" id="difficultySelDiv">
 					Difficulty
+                </div>
 					<select class="settingsDropdowns" id="difficultySelector">
-						<option value="easy">Easy</option>
-						<option value="medium">Medium</option>
-						<option value="hard">Hard</option>
+						<option data-translate="Easy" value="easy">Easy</option>
+						<option data-translate="Medium" value="medium">Medium</option>
+						<option data-translate="Hard" value="hard">Hard</option>
 					</select>
-				</div>
-				<div data-translate="Category" id="categSelDiv">Category
+				<div data-translate="Category" id="categSelDiv">
+                    Category
+                </div>
 				<select class="settingsDropdowns" id="categorySelector">
 					<option value="1">1</option>
 				</select>
-                </div>
-
-                <div data-translate="Buttons">
-                    <button type="submit" id="saveButton">Save changes</button>
+                <a href="index.html">
+                    <button type="button" id="backButton" data-translate="Back">Back</button>
+                </a>
 			    </div>
-            </form>
 		</div>
-		<!--<script type="module" src="js/main.js"></script> -->
+		<script type="module" src="js/settings.js"></script>
+		<script type="module" src="js/main.js"></script>
 	</body>
 </html>
