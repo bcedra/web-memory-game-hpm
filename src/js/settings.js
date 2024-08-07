@@ -76,8 +76,12 @@ function saveCategoryChoice() {
 	};
 }
 
-export function addInputsChangeEvents() {
+function addInputsChangeEvents() {
 	saveLanguageChoice();
 	saveDifficultyChoice();
 	saveCategoryChoice();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+	addInputsChangeEvents();
+	});
