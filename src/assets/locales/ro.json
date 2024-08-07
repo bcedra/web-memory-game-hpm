@@ -5,5 +5,16 @@
 	"Start": "Incepe",
 	"Timer": "Timp",
 	"Exit": "Iesire",
-	"Replay": "Incepe din nou"
+	"Replay": "Incepe din nou",
+    "Language": "Limbă",
+    "Difficulty": "Dificultate",
+    "Easy": "Ușoară",
+    "Medium": "Medie",
+    "Hard": "Grea",
+    "Category": "Categorie",
+    "Back": "Înapoi",
+    "en": "Engleză",
+    "ro": "Română",
+    "Settings": "Setări",
+	"Play": "Joacă!"
 }
