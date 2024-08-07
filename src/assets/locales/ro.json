@@ -1,5 +1,11 @@
 {
 	"HelloWorld": "Salut Lume!",
+	"EnterName": "Introdu numele tau: ",
+	"SelectAvatar": "Selecteaza avatarul: ",
+	"Start": "Incepe",
+	"Timer": "Timp",
+	"Exit": "Iesire",
+	"Replay": "Incepe din nou",
     "Language": "Limbă",
     "Difficulty": "Dificultate",
     "Easy": "Ușoară",

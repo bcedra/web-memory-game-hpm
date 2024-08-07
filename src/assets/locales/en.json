@@ -1,5 +1,11 @@
 {
 	"HelloWorld": "Hello World!",
+	"EnterName": "Enter your name here: ",
+	"SelectAvatar": "Select your avatar: ",
+	"Start": "Start",
+	"Timer": "Timer",
+	"Exit": "Exit",
+	"Replay": "Replay",
     "Language": "Language",
     "Difficulty": "Difficulty",
     "Medium": "Medium",
