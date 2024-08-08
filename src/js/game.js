@@ -4,7 +4,6 @@ import { initializeTranslations } from './translations.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 	initializeTranslations();
-
 	addStartListeners();
 });
 
@@ -36,7 +35,7 @@ function resetTimer() {
 
 function handleReplayButton() {
 	resetTimer();
-	//aici mai vine si functia cu generarea cardurilor
+	createTable();
 }
 
 function handleStartButton() {
@@ -48,6 +47,7 @@ function handleStartButton() {
 		document.getElementById('setup-screen').hidden = true;
 		document.getElementById('game-screen').hidden = false;
 		timer();
+		createTable();
 	}
 }
 
@@ -60,4 +60,71 @@ export function addStartListeners() {
 			handleStartButton();
 		}
 	});
+}
+
+function shuffle(array) {
+	for (var i = array.length - 1; i > 0; i--) {
+		var j = Math.floor(Math.random() * (i + 1));
+		var temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
+	}
+	return array;
+}
+
+var tableData = [];
+
+function createTable() {
+	const settingsJSON = JSON.parse(localStorage.getItem('settingsJSON'));
+	const difficultySelected = settingsJSON.difficultySelected;
+
+	let size;
+	switch (difficultySelected) {
+		case 'easy':
+			size = 4;
+			break;
+		case 'medium':
+			size = 6;
+			break;
+		case 'hard':
+			size = 8;
+			break;
+		default:
+			size = 4;
+			break;
+	}
+
+	var table = document.getElementById('game-board');
+	table.innerHTML = '';
+
+	event.preventDefault();
+
+	var nbCells = size * size;
+	var valCels = [];
+
+	for (var i = 1; i <= nbCells / 2; i++) {
+		valCels.push(i, i);
+	}
+
+	valCels = shuffle(valCels);
+
+	for (let i = 0; i < size; i++) {
+		var rowData = [];
+		var row = document.createElement('tr');
+
+		for (let j = 0; j < size; j++) {
+			var cell = document.createElement('td');
+
+			var number = valCels.pop();
+
+			var card = document.createElement('div');
+			card.classList.add('card');
+			card.textContent = number;
+
+			cell.appendChild(card);
+			row.appendChild(cell);
+		}
+		table.appendChild(row);
+		tableData.push(rowData);
+	}
 }
