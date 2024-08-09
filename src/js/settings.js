@@ -1,87 +1,47 @@
-function saveLanguageChoice() {
-	// TODO: change the game language based on the value of languageSelector
-	const languageSelector = document.getElementById('languageSelector');
-
-	let settingsJSON = JSON.parse(localStorage.getItem('settingsJSON')) || {};
-
-	if (!settingsJSON.langSelected) {
-		settingsJSON.langSelected = 'en';
-		localStorage.setItem('settingsJSON', JSON.stringify(settingsJSON));
-	}
-
-	if (settingsJSON.langSelected) {
-		languageSelector.value = settingsJSON.langSelected;
-	}
-
-	console.log(settingsJSON.langSelected);
-
-	languageSelector.onchange = function () {
-		const langSelected = languageSelector.value;
-
-		settingsJSON.langSelected = langSelected;
-		localStorage.setItem('settingsJSON', JSON.stringify(settingsJSON));
-
-		const storedSettings = JSON.parse(localStorage.getItem('settingsJSON'));
-		console.log(storedSettings.langSelected);
+function setDefaultValues() {
+	const defaultSettings = {
+		languageSelected: 'en',
+		difficultySelected: 'easy',
+		categorySelected: 'numbers',
 	};
+
+	document.getElementById('languageSelector').value = defaultSettings.languageSelected;
+	document.getElementById('difficultySelector').value = defaultSettings.difficultySelected;
+	document.getElementById('categorySelector').value = defaultSettings.categorySelected;
+
+	localStorage.setItem('settingsJSON', JSON.stringify(defaultSettings));
 }
 
-function saveDifficultyChoice() {
-	let settingsJSON = JSON.parse(localStorage.getItem('settingsJSON')) || {};
+function saveSettings() {
+	const languageSelected = document.getElementById('languageSelector').value;
+	const difficultySelected = document.getElementById('difficultySelector').value;
+	const categorySelected = document.getElementById('categorySelector').value;
 
-	if (!settingsJSON.difficultySelected) {
-		settingsJSON.difficultySelected = 'easy';
-		localStorage.setItem('settingsJSON', JSON.stringify(settingsJSON));
-	}
-
-	if (settingsJSON.difficultySelected) {
-		difficultySelector.value = settingsJSON.difficultySelected;
-	}
-
-	console.log(settingsJSON.difficultySelected);
-
-	difficultySelector.onchange = function () {
-		const difficultySelected = difficultySelector.value;
-
-		settingsJSON.difficultySelected = difficultySelected;
-		localStorage.setItem('settingsJSON', JSON.stringify(settingsJSON));
-
-		const storedSettings = JSON.parse(localStorage.getItem('settingsJSON'));
-		console.log(storedSettings.difficultySelected);
+	const settings = {
+		languageSelected: languageSelected,
+		difficultySelected: difficultySelected,
+		categorySelected: categorySelected,
 	};
+
+	const settingsJSON = JSON.stringify(settings);
+	localStorage.setItem('settingsJSON', settingsJSON);
 }
 
-function saveCategoryChoice() {
-	let settingsJSON = JSON.parse(localStorage.getItem('settingsJSON')) || {};
+function loadSettings() {
+	const settingsJSON = localStorage.getItem('settingsJSON');
 
-	if (!settingsJSON.categorySelected) {
-		settingsJSON.categorySelected = '1';
-		localStorage.setItem('settingsJSON', JSON.stringify(settingsJSON));
+	if (settingsJSON) {
+		const settings = JSON.parse(settingsJSON);
+		document.getElementById('languageSelector').value = settings.languageSelected;
+		document.getElementById('difficultySelector').value = settings.difficultySelected;
+		document.getElementById('categorySelector').value = settings.categorySelected;
+	} else {
+		setDefaultValues();
 	}
-
-	if (settingsJSON.categorySelected) {
-		categorySelector.value = settingsJSON.categorySelected;
-	}
-
-	console.log(settingsJSON.categorySelected);
-
-	categorySelector.onchange = function () {
-		const categorySelected = categorySelector.value;
-
-		settingsJSON.categorySelected = categorySelected;
-		localStorage.setItem('settingsJSON', JSON.stringify('settingsJSON'))
-
-		const storedSettings = JSON.parse(localStorage.getItem('settingsJSON'));
-		console.log(storedSettings.categorySelected);
-	};
 }
 
-function addInputsChangeEvents() {
-	saveLanguageChoice();
-	saveDifficultyChoice();
-	saveCategoryChoice();
-}
+document.getElementById('languageSelector').addEventListener('change', saveSettings);
+document.getElementById('difficultySelector').addEventListener('change', saveSettings);
+document.getElementById('categorySelector').addEventListener('change', saveSettings);
 
-document.addEventListener('DOMContentLoaded', () => {
-	addInputsChangeEvents();
-	});
+window.addEventListener('load', loadSettings);
