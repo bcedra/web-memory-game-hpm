@@ -1,6 +1,6 @@
 {
 	"HelloWorld": "Salut Lume!",
-	"EnterName": "Introdu numele tau: ",
+	"EnterName": "Nume de joc: ",
 	"SelectAvatar": "Selecteaza avatarul: ",
 	"Start": "Incepe",
 	"Timer": "Timp",
@@ -16,7 +16,9 @@
 	"en": "Engleză",
 	"ro": "Română",
 	"Settings": "Setări",
+    "Numbers": "Numere",
 	"Play": "Joacă!",
+    "Fruits": "Fructe",
 	"Leaderboard": "Clasament",
 	"Position": "Poziție",
 	"Time": "Timp",

@@ -4,8 +4,8 @@ import { initializeTranslations } from './translations.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 	initializeTranslations();
-
 	addStartListeners();
+	displayUsername();
 });
 
 let timerInterval;
@@ -36,18 +36,45 @@ function resetTimer() {
 
 function handleReplayButton() {
 	resetTimer();
-	//aici mai vine si functia cu generarea cardurilor
+	createTable();
 }
 
 function handleStartButton() {
-	const ursername = document.getElementById('name').value;
+	clearErrors();
+	let hasError = false;
+
+	const username = document.getElementById('name').value.trim();
 	const avatar = document.getElementById('avatar').value;
-	if (username && avatar) {
+
+	if (!username) {
+		setError('name', 'Please enter your nickname!');
+		hasError = true;
+	}
+
+	if (hasError) {
+		return;
+	}
+
+	clearErrors();
+
+	if (avatar) {
 		document.getElementById('username').textContent = username;
 		document.getElementById('user-avatar').src = 'path/to/${avatar}.png';
+
+		localStorage.setItem('username', username);
+
 		document.getElementById('setup-screen').hidden = true;
 		document.getElementById('game-screen').hidden = false;
+
 		timer();
+		createTable();
+	}
+}
+
+function displayUsername() {
+	const savedUsername = localStorage.getItem('username');
+	if (savedUsername) {
+		document.getElementById('username').textContent = savedUsername;
 	}
 }
 
@@ -60,4 +87,88 @@ export function addStartListeners() {
 			handleStartButton();
 		}
 	});
+}
+
+function shuffle(array) {
+	for (var i = array.length - 1; i > 0; i--) {
+		var j = Math.floor(Math.random() * (i + 1));
+		var temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
+	}
+	return array;
+}
+
+var tableData = [];
+
+function createTable() {
+	const settingsJSON = JSON.parse(localStorage.getItem('settingsJSON'));
+	const difficultySelected = settingsJSON.difficultySelected;
+
+	let size;
+	switch (difficultySelected) {
+		case 'easy':
+			size = 4;
+			break;
+		case 'medium':
+			size = 6;
+			break;
+		case 'hard':
+			size = 8;
+			break;
+		default:
+			size = 4;
+			break;
+	}
+
+	var table = document.getElementById('game-board');
+	table.innerHTML = '';
+
+	event.preventDefault();
+
+	var nbCells = size * size;
+	var valCels = [];
+
+	for (var i = 1; i <= nbCells / 2; i++) {
+		valCels.push(i, i);
+	}
+
+	valCels = shuffle(valCels);
+
+	for (let i = 0; i < size; i++) {
+		var rowData = [];
+		var row = document.createElement('tr');
+
+		for (let j = 0; j < size; j++) {
+			var cell = document.createElement('td');
+
+			var number = valCels.pop();
+
+			var card = document.createElement('div');
+			card.classList.add('card');
+			card.textContent = number;
+
+			cell.appendChild(card);
+			row.appendChild(cell);
+		}
+		table.appendChild(row);
+		tableData.push(rowData);
+	}
+}
+
+function setError(elementId, message) {
+	const element = document.getElementById(elementId);
+	const errorElement = document.createElement('span');
+	errorElement.className = 'error-message';
+	errorElement.textContent = message;
+	element.parentElement.appendChild(errorElement);
+	element.classList.add('input-error');
+}
+
+function clearErrors() {
+	const errorMessages = document.querySelectorAll('.error-message');
+	errorMessages.forEach((msg) => msg.remove());
+
+	const inputElements = document.querySelectorAll('.input-error');
+	inputElements.forEach((el) => el.classList.remove('input-error'));
 }

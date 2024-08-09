@@ -57,3 +57,13 @@ table {
 	width: 100%;
 	border-collapse: collapse;
 }
+
+.error {
+	color: red;
+	display: block;
+	font-size: 20px;
+}
+
+.input-error {
+	border: 2px solid red;
+}
