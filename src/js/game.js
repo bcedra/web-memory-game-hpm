@@ -100,24 +100,32 @@ function shuffle(array) {
 }
 
 var tableData = [];
+var flippedCards = [];
+var lockBoard = false;
 
 function createTable() {
 	const settingsJSON = JSON.parse(localStorage.getItem('settingsJSON'));
 	const difficultySelected = settingsJSON.difficultySelected;
 
 	let size;
+	let waitsec;
+
 	switch (difficultySelected) {
 		case 'easy':
 			size = 4;
+			waitsec = 2000;
 			break;
 		case 'medium':
 			size = 6;
+			waitsec = 3000;
 			break;
 		case 'hard':
 			size = 8;
+			waitsec = 5000;
 			break;
 		default:
 			size = 4;
+			waitsec = 2000;
 			break;
 	}
 
@@ -146,14 +154,62 @@ function createTable() {
 
 			var card = document.createElement('div');
 			card.classList.add('card');
-			card.textContent = number;
+
+			var flip = document.createElement('div');
+			flip.classList.add('flip', 'flipped');
+
+			var front = document.createElement('div');
+			front.classList.add('front');
+
+			var back = document.createElement('div');
+			back.classList.add('back');
+
+			back.textContent = number;
+
+			flip.appendChild(front);
+			flip.appendChild(back);
+			card.appendChild(flip);
 
 			cell.appendChild(card);
 			row.appendChild(cell);
+
+			flip.addEventListener('click', function () {
+				if (lockBoard) return;
+
+				this.classList.add('flipped');
+				flippedCards.push(this);
+
+				if (flippedCards.length === 2) checkMatch();
+			});
 		}
 		table.appendChild(row);
 		tableData.push(rowData);
 	}
+
+	setTimeout(() => {
+		const allFlippedOnFront = document.querySelectorAll('.flip');
+		allFlippedOnFront.forEach((flip) => flip.classList.remove('flipped'));
+	}, waitsec); //cate milsec in functie de dificultate
+}
+
+function checkMatch() {
+	const [first, second] = flippedCards;
+
+	if (first.querySelector('.back').textContent === second.querySelector('.back').textContent) {
+		matchedAndReset(true);
+	} else {
+		lockBoard = true;
+		setTimeout(() => {
+			first.classList.remove('flipped');
+			second.classList.remove('flipped');
+			matchedAndReset(false);
+		}, 1000);
+	}
+}
+
+function matchedAndReset(matched) {
+	flippedCards = [];
+	lockBoard = false;
 }
 
 function setError(elementId, message) {
