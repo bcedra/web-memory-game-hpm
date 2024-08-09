@@ -5,6 +5,7 @@ import { initializeTranslations } from './translations.js';
 document.addEventListener('DOMContentLoaded', () => {
 	initializeTranslations();
 	addStartListeners();
+	displayUsername();
 });
 
 let timerInterval;
@@ -39,20 +40,32 @@ function handleReplayButton() {
 }
 
 function handleStartButton() {
-	const ursername = document.getElementById('name').value.trim();
+	clearErrors();
+	let hasError = false;
+
+	const username = document.getElementById('name').value.trim();
 	const avatar = document.getElementById('avatar').value;
 
-	if (username.length == 0) {
-		alert('Please enter a nickname.');
+	if (!username) {
+		setError('name', 'Please enter your nickname!');
+		hasError = true;
+	}
+
+	if (hasError) {
 		return;
 	}
+
+	clearErrors();
 
 	if (avatar) {
 		document.getElementById('username').textContent = username;
 		document.getElementById('user-avatar').src = 'path/to/${avatar}.png';
+
 		localStorage.setItem('username', username);
+
 		document.getElementById('setup-screen').hidden = true;
 		document.getElementById('game-screen').hidden = false;
+
 		timer();
 		createTable();
 	}
@@ -74,8 +87,6 @@ export function addStartListeners() {
 			handleStartButton();
 		}
 	});
-
-	displayUsername();
 }
 
 function shuffle(array) {
@@ -143,4 +154,21 @@ function createTable() {
 		table.appendChild(row);
 		tableData.push(rowData);
 	}
+}
+
+function setError(elementId, message) {
+	const element = document.getElementById(elementId);
+	const errorElement = document.createElement('span');
+	errorElement.className = 'error-message';
+	errorElement.textContent = message;
+	element.parentElement.appendChild(errorElement);
+	element.classList.add('input-error');
+}
+
+function clearErrors() {
+	const errorMessages = document.querySelectorAll('.error-message');
+	errorMessages.forEach((msg) => msg.remove());
+
+	const inputElements = document.querySelectorAll('.input-error');
+	inputElements.forEach((el) => el.classList.remove('input-error'));
 }
