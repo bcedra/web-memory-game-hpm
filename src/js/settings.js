@@ -38,10 +38,30 @@ function loadSettings() {
 	} else {
 		setDefaultValues();
 	}
+
+	if (settingsJSON.categorySelected) {
+		categorySelector.value = settingsJSON.categorySelected;
+	}
+
+	console.log(settingsJSON.categorySelected);
+
+	categorySelector.onchange = function () {
+		const categorySelected = categorySelector.value;
+
+		settingsJSON.categorySelected = categorySelected;
+		localStorage.setItem('settingsJSON', JSON.stringify('settingsJSON'));
+
+		const storedSettings = JSON.parse(localStorage.getItem('settingsJSON'));
+		console.log(storedSettings.categorySelected);
+	};
 }
 
 document.getElementById('languageSelector').addEventListener('change', saveSettings);
 document.getElementById('difficultySelector').addEventListener('change', saveSettings);
 document.getElementById('categorySelector').addEventListener('change', saveSettings);
+
+document.addEventListener('DOMContentLoaded', () => {
+	addInputsChangeEvents();
+});
 
 window.addEventListener('load', loadSettings);
