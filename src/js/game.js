@@ -39,15 +39,29 @@ function handleReplayButton() {
 }
 
 function handleStartButton() {
-	const ursername = document.getElementById('name').value;
+	const ursername = document.getElementById('name').value.trim();
 	const avatar = document.getElementById('avatar').value;
-	if (username && avatar) {
+
+	if (username.length == 0) {
+		alert('Please enter a nickname.');
+		return;
+	}
+
+	if (avatar) {
 		document.getElementById('username').textContent = username;
 		document.getElementById('user-avatar').src = 'path/to/${avatar}.png';
+		localStorage.setItem('username', username);
 		document.getElementById('setup-screen').hidden = true;
 		document.getElementById('game-screen').hidden = false;
 		timer();
 		createTable();
+	}
+}
+
+function displayUsername() {
+	const savedUsername = localStorage.getItem('username');
+	if (savedUsername) {
+		document.getElementById('username').textContent = savedUsername;
 	}
 }
 
@@ -60,6 +74,8 @@ export function addStartListeners() {
 			handleStartButton();
 		}
 	});
+
+	displayUsername();
 }
 
 function shuffle(array) {

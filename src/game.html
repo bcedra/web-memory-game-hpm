@@ -10,7 +10,7 @@
 	<body>
 		<div id="setup-screen">
 			<label for="name-label" data-translate="EnterName"></label>
-			<input type="text" id="name" />
+			<input type="text" id="name" required />
 
 			<div class="avatar-group">
 				<label for="avatar" data-translate="SelectAvatar"></label>
@@ -24,7 +24,9 @@
 		</div>
 		<div id="game-screen" hidden="true">
 			<header>
-				<button id="exit-button" data-translate="Exit">&lt;</button>
+				<a href="index.html">
+					<button id="exit-button" data-translate="Exit">&lt;</button>
+				</a>
 				<button id="replay-button" data-translate="Replay"></button>
 				<div id="timer" class="timer" data-translate="Timer">00:00</div>
 				<div class="user-info">
@@ -32,6 +34,7 @@
 					<span id="username"></span>
 				</div>
 			</header>
+			<h1 class="game-title">Memory Game</h1>
 			<table id="game-board"></table>
 		</div>
 		<script type="module" src="js/game.js"></script>
