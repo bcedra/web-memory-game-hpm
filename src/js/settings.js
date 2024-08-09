@@ -69,7 +69,7 @@ function saveCategoryChoice() {
 		const categorySelected = categorySelector.value;
 
 		settingsJSON.categorySelected = categorySelected;
-		localStorage.setItem('settingsJSON', JSON.stringify('settingsJSON'))
+		localStorage.setItem('settingsJSON', JSON.stringify('settingsJSON'));
 
 		const storedSettings = JSON.parse(localStorage.getItem('settingsJSON'));
 		console.log(storedSettings.categorySelected);
@@ -84,4 +84,4 @@ function addInputsChangeEvents() {
 
 document.addEventListener('DOMContentLoaded', () => {
 	addInputsChangeEvents();
-	});
+});
