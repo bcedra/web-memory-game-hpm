@@ -8,9 +8,52 @@ document.addEventListener('DOMContentLoaded', () => {
 	displayUsername();
 });
 
-let timerInterval;
-let sec = 0;
-let min = 0;
+var timerInterval;
+var sec = 0;
+var min = 0;
+var waitsec;
+var initialWaitsec;
+var size;
+
+function difficulty() {
+	const settingsJSON = JSON.parse(localStorage.getItem('settingsJSON'));
+	const difficultySelected = settingsJSON.difficultySelected;
+
+	switch (difficultySelected) {
+		case 'easy':
+			size = 4;
+			waitsec = 2;
+			break;
+		case 'medium':
+			size = 6;
+			waitsec = 3;
+			break;
+		case 'hard':
+			size = 8;
+			waitsec = 5;
+			break;
+		default:
+			size = 4;
+			waitsec = 2;
+			break;
+	}
+	initialWaitsec = waitsec;
+}
+
+function startCountdown() {
+	const timerElement = document.getElementById('timer');
+	timerElement.textContent = `00:${waitsec.toString().padStart(2, '0')}`;
+
+	timerInterval = setInterval(() => {
+		if (waitsec > 0) {
+			waitsec--;
+			timerElement.textContent = `00:${waitsec.toString().padStart(2, '0')}`;
+		} else {
+			clearInterval(timerInterval);
+			timer();
+		}
+	}, 1000);
+}
 
 function timer() {
 	const timerElement = document.getElementById('timer');
@@ -29,9 +72,10 @@ function resetTimer() {
 	clearInterval(timerInterval);
 	sec = 0;
 	min = 0;
+	waitsec = initialWaitsec;
 	const timerElement = document.getElementById('timer');
 	timerElement.textContent = '00:00';
-	timer();
+	startCountdown();
 }
 
 function handleReplayButton() {
@@ -66,7 +110,8 @@ function handleStartButton() {
 		document.getElementById('setup-screen').hidden = true;
 		document.getElementById('game-screen').hidden = false;
 
-		timer();
+		difficulty();
+		startCountdown();
 		createTable();
 	}
 }
@@ -102,32 +147,11 @@ function shuffle(array) {
 var tableData = [];
 var flippedCards = [];
 var lockBoard = false;
+var cardsArr = [];
 
 function createTable() {
 	const settingsJSON = JSON.parse(localStorage.getItem('settingsJSON'));
 	const difficultySelected = settingsJSON.difficultySelected;
-
-	let size;
-	let waitsec;
-
-	switch (difficultySelected) {
-		case 'easy':
-			size = 4;
-			waitsec = 2000;
-			break;
-		case 'medium':
-			size = 6;
-			waitsec = 3000;
-			break;
-		case 'hard':
-			size = 8;
-			waitsec = 5000;
-			break;
-		default:
-			size = 4;
-			waitsec = 2000;
-			break;
-	}
 
 	var table = document.getElementById('game-board');
 	table.innerHTML = '';
@@ -181,6 +205,8 @@ function createTable() {
 
 				if (flippedCards.length === 2) checkMatch();
 			});
+
+			cardsArr.push(card);
 		}
 		table.appendChild(row);
 		tableData.push(rowData);
@@ -189,7 +215,7 @@ function createTable() {
 	setTimeout(() => {
 		const allFlippedOnFront = document.querySelectorAll('.flip');
 		allFlippedOnFront.forEach((flip) => flip.classList.remove('flipped'));
-	}, waitsec); //cate milsec in functie de dificultate
+	}, initialWaitsec * 1000); //cate milsec in functie de dificultate
 }
 
 function checkMatch() {
@@ -210,6 +236,15 @@ function checkMatch() {
 function matchedAndReset(matched) {
 	flippedCards = [];
 	lockBoard = false;
+	checkIfAllCardsMatched();
+}
+
+function checkIfAllCardsMatched() {
+	const allCardsFlipped = cardsArr.every((card) => card.querySelector('.flip').classList.contains('flipped'));
+	if (allCardsFlipped) {
+		clearInterval(timerInterval); //stop the timer
+		//alert('Felicitari!');
+	}
 }
 
 function setError(elementId, message) {
