@@ -11,8 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 var timerInterval;
 var sec = 0;
 var min = 0;
-var waitsec;
-var initialWaitsec;
 var size;
 
 function difficulty() {
@@ -22,37 +20,17 @@ function difficulty() {
 	switch (difficultySelected) {
 		case 'easy':
 			size = 4;
-			waitsec = 2;
 			break;
 		case 'medium':
 			size = 6;
-			waitsec = 3;
 			break;
 		case 'hard':
 			size = 8;
-			waitsec = 5;
 			break;
 		default:
 			size = 4;
-			waitsec = 2;
 			break;
 	}
-	initialWaitsec = waitsec;
-}
-
-function startCountdown() {
-	const timerElement = document.getElementById('timer');
-	timerElement.textContent = `00:${waitsec.toString().padStart(2, '0')}`;
-
-	timerInterval = setInterval(() => {
-		if (waitsec > 0) {
-			waitsec--;
-			timerElement.textContent = `00:${waitsec.toString().padStart(2, '0')}`;
-		} else {
-			clearInterval(timerInterval);
-			timer();
-		}
-	}, 1000);
 }
 
 function timer() {
@@ -72,15 +50,14 @@ function resetTimer() {
 	clearInterval(timerInterval);
 	sec = 0;
 	min = 0;
-	waitsec = initialWaitsec;
 	const timerElement = document.getElementById('timer');
 	timerElement.textContent = '00:00';
-	startCountdown();
 }
 
 function handleReplayButton() {
 	resetTimer();
 	createTable();
+	timer();
 }
 
 function handleStartButton() {
@@ -111,7 +88,8 @@ function handleStartButton() {
 		document.getElementById('game-screen').hidden = false;
 
 		difficulty();
-		startCountdown();
+		resetTimer();
+		timer();
 		createTable();
 	}
 }
@@ -180,7 +158,7 @@ function createTable() {
 			card.classList.add('card');
 
 			var flip = document.createElement('div');
-			flip.classList.add('flip', 'flipped');
+			flip.classList.add('flip');
 
 			var front = document.createElement('div');
 			front.classList.add('front');
@@ -198,7 +176,7 @@ function createTable() {
 			row.appendChild(cell);
 
 			flip.addEventListener('click', function () {
-				if (lockBoard) return;
+				if (lockBoard || this.classList.contains('flipped')) return;
 
 				this.classList.add('flipped');
 				flippedCards.push(this);
@@ -211,11 +189,6 @@ function createTable() {
 		table.appendChild(row);
 		tableData.push(rowData);
 	}
-
-	setTimeout(() => {
-		const allFlippedOnFront = document.querySelectorAll('.flip');
-		allFlippedOnFront.forEach((flip) => flip.classList.remove('flipped'));
-	}, initialWaitsec * 1000); //cate milsec in functie de dificultate
 }
 
 function checkMatch() {
@@ -233,7 +206,7 @@ function checkMatch() {
 	}
 }
 
-function matchedAndReset(matched) {
+function matchedAndReset() {
 	flippedCards = [];
 	lockBoard = false;
 	checkIfAllCardsMatched();
