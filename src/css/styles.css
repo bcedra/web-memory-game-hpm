@@ -67,3 +67,60 @@ table {
 .input-error {
 	border: 2px solid red;
 }
+
+#game-board {
+	align-self: center;
+	margin-top: 30px;
+	text-align: center;
+}
+
+td {
+	background-color: rgb(208, 240, 239);
+	border: 2px solid rgb(254, 254, 254);
+	border-style: dashed;
+	padding: 8px;
+	text-align: center;
+	box-shadow: 10px 10px 5px 12px lightblue;
+	perspective: 1000px;
+}
+
+td:hover {
+	opacity: 0.4;
+}
+
+.card {
+	width: 100px;
+	height: 100px;
+}
+
+.flip {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
+}
+
+.flip.flipped {
+	transform: rotateY(180deg);
+}
+
+.front,
+.back {
+	width: 100px;
+	height: 100px;
+	backface-visibility: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+}
+
+.front {
+	background-color: rgb(16, 166, 235);
+}
+
+.back {
+	background-color: lightblue;
+	transform: rotateY(180deg);
+}

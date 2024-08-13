@@ -8,9 +8,30 @@ document.addEventListener('DOMContentLoaded', () => {
 	displayUsername();
 });
 
-let timerInterval;
-let sec = 0;
-let min = 0;
+var timerInterval;
+var sec = 0;
+var min = 0;
+var size;
+
+function difficulty() {
+	const settingsJSON = JSON.parse(localStorage.getItem('settingsJSON'));
+	const difficultySelected = settingsJSON.difficultySelected;
+
+	switch (difficultySelected) {
+		case 'easy':
+			size = 4;
+			break;
+		case 'medium':
+			size = 6;
+			break;
+		case 'hard':
+			size = 8;
+			break;
+		default:
+			size = 4;
+			break;
+	}
+}
 
 function timer() {
 	const timerElement = document.getElementById('timer');
@@ -31,12 +52,12 @@ function resetTimer() {
 	min = 0;
 	const timerElement = document.getElementById('timer');
 	timerElement.textContent = '00:00';
-	timer();
 }
 
 function handleReplayButton() {
 	resetTimer();
 	createTable();
+	timer();
 }
 
 function handleStartButton() {
@@ -66,6 +87,8 @@ function handleStartButton() {
 		document.getElementById('setup-screen').hidden = true;
 		document.getElementById('game-screen').hidden = false;
 
+		difficulty();
+		resetTimer();
 		timer();
 		createTable();
 	}
@@ -100,26 +123,13 @@ function shuffle(array) {
 }
 
 var tableData = [];
+var flippedCards = [];
+var lockBoard = false;
+var cardsArr = [];
 
 function createTable() {
 	const settingsJSON = JSON.parse(localStorage.getItem('settingsJSON'));
 	const difficultySelected = settingsJSON.difficultySelected;
-
-	let size;
-	switch (difficultySelected) {
-		case 'easy':
-			size = 4;
-			break;
-		case 'medium':
-			size = 6;
-			break;
-		case 'hard':
-			size = 8;
-			break;
-		default:
-			size = 4;
-			break;
-	}
 
 	var table = document.getElementById('game-board');
 	table.innerHTML = '';
@@ -146,13 +156,67 @@ function createTable() {
 
 			var card = document.createElement('div');
 			card.classList.add('card');
-			card.textContent = number;
+
+			var flip = document.createElement('div');
+			flip.classList.add('flip');
+
+			var front = document.createElement('div');
+			front.classList.add('front');
+
+			var back = document.createElement('div');
+			back.classList.add('back');
+
+			back.textContent = number;
+
+			flip.appendChild(front);
+			flip.appendChild(back);
+			card.appendChild(flip);
 
 			cell.appendChild(card);
 			row.appendChild(cell);
+
+			flip.addEventListener('click', function () {
+				if (lockBoard || this.classList.contains('flipped')) return;
+
+				this.classList.add('flipped');
+				flippedCards.push(this);
+
+				if (flippedCards.length === 2) checkMatch();
+			});
+
+			cardsArr.push(card);
 		}
 		table.appendChild(row);
 		tableData.push(rowData);
+	}
+}
+
+function checkMatch() {
+	const [first, second] = flippedCards;
+
+	if (first.querySelector('.back').textContent === second.querySelector('.back').textContent) {
+		matchedAndReset(true);
+	} else {
+		lockBoard = true;
+		setTimeout(() => {
+			first.classList.remove('flipped');
+			second.classList.remove('flipped');
+			matchedAndReset(false);
+		}, 1000);
+	}
+}
+
+function matchedAndReset() {
+	flippedCards = [];
+	lockBoard = false;
+	checkIfAllCardsMatched();
+}
+
+function checkIfAllCardsMatched() {
+	const allCardsFlipped = cardsArr.every((card) => card.querySelector('.flip').classList.contains('flipped'));
+	if (allCardsFlipped) {
+		clearInterval(timerInterval); //stop the timer
+		//alert('Felicitari!');
 	}
 }
 
