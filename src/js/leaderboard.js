@@ -1,4 +1,4 @@
-export async function uploadLeaderboard() {
+async function uploadLeaderboard() {
 	fetch('https://stage.helpdesk.hypertalk.net/api/operators').then((res) => {
 		res.json().then((data) => {
 			const operators = data.value;
@@ -18,3 +18,4 @@ function createTable(operators) {
 	});
 	document.getElementById('data').innerHTML = col;
 }
+uploadLeaderboard();
