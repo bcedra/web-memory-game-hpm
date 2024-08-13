@@ -16,5 +16,12 @@
 	"en": "English",
 	"ro": "Romanian",
 	"Settings": "Settings",
-	"Play": "Play!"
+	"Play": "Play!",
+    "Fruits": "Fruits",
+    "Numbers": "Numbers",
+	"Leaderboard": "Leaderboard",
+	"Position": "Position",
+	"Time": "Time",
+	"Name": "Name",
+	"MemoryGame": "Memory Game"
 }

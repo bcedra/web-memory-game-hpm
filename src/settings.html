@@ -8,7 +8,12 @@
 	</head>
 
 	<body>
-        <h1 data-translate="Settings">Settings</h1>
+        <header>
+			<a href="index.html">
+				<button type="button" id="backButton" data-translate="Back">Back</button>
+			</a>
+			<h1 data-translate="Settings">Settings</h1>
+		</header>
         <div class="settingsMenuOptions">
 				<div data-translate="Language" id="langSelDiv">
 					Language
@@ -30,11 +35,9 @@
                     Category
                 </div>
 				<select class="settingsDropdowns" id="categorySelector">
-					<option value="1">1</option>
+					<option data-translate="numbers" value="numbers">Numbers</option>
+					<option data-translate="fruits" value="fruits">Fruits</option>
 				</select>
-                <a href="index.html">
-                    <button type="button" id="backButton" data-translate="Back">Back</button>
-                </a>
 			    </div>
 		</div>
 		<script type="module" src="js/settings.js"></script>
