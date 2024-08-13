@@ -2,8 +2,10 @@
 
 import { initializeTranslations } from './translations.js';
 import { uploadLeaderboard } from './leaderboard.js';
+import { defaultSettings } from './initialSettings.js';
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
+	defaultSettings();
 	initializeTranslations();
 	uploadLeaderboard();
 });
