@@ -105,11 +105,10 @@ td:hover {
 
 .flip.flipped {
 	transform: rotateY(180deg);
-	background-color: rgb(227, 169, 178);
 }
 
-.flip.flipped.selected {
-	background-color: rgb(227, 169, 178);
+.flipped.selected {
+	background-color: rgb(242, 102, 188);
 }
 
 .front,
