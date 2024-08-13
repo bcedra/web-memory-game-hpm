@@ -17,6 +17,11 @@
 	"ro": "Romanian",
 	"Settings": "Settings",
 	"Play": "Play!",
+    "Fruits": "Fruits",
     "Numbers": "Numbers",
-    "Fruits": "Fruits"
+	"Leaderboard": "Leaderboard",
+	"Position": "Position",
+	"Time": "Time",
+	"Name": "Name",
+	"MemoryGame": "Memory Game"
 }
