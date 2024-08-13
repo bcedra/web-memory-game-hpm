@@ -47,6 +47,7 @@
 a {
 	text-decoration: none;
 }
+
 table,
 td,
 th {
@@ -54,7 +55,6 @@ th {
 }
 
 table {
-	width: 100%;
 	border-collapse: collapse;
 }
 
@@ -75,13 +75,13 @@ table {
 }
 
 td {
-	background-color: rgb(208, 240, 239);
+	background-color: rgb(255, 255, 255);
 	border: 2px solid rgb(254, 254, 254);
 	border-style: dashed;
-	padding: 8px;
+	padding: 0px;
 	text-align: center;
-	box-shadow: 10px 10px 5px 12px lightblue;
 	perspective: 1000px;
+	box-sizing: border-box;
 }
 
 td:hover {
@@ -91,6 +91,7 @@ td:hover {
 .card {
 	width: 100px;
 	height: 100px;
+	position: relative;
 }
 
 .flip {
@@ -99,10 +100,16 @@ td:hover {
 	text-align: center;
 	transition: transform 0.6s;
 	transform-style: preserve-3d;
+	position: relative;
 }
 
 .flip.flipped {
 	transform: rotateY(180deg);
+	background-color: rgb(227, 169, 178);
+}
+
+.flip.flipped.selected {
+	background-color: rgb(227, 169, 178);
 }
 
 .front,
@@ -123,4 +130,9 @@ td:hover {
 .back {
 	background-color: lightblue;
 	transform: rotateY(180deg);
+}
+
+img {
+	width: 90px;
+	height: 90px;
 }
