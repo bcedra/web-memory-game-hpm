@@ -16,8 +16,10 @@ The game consists of three main parts:
 
 - Node.js v20.16.0
 - NPM (Node Package Manager)
+- Docker
 
 You can download Node.js with NPM from [here](https://nodejs.org/en/download/prebuilt-installer).
+You can download Docker from [here](https://docs.docker.com/desktop/install/windows-install/).
 
 ## Installation
 
@@ -41,10 +43,30 @@ Follow these steps to install and run the application:
    npm install
    ```
 
+4. Run docker container
+
+   ```sh
+      docker-compose up -d
+   ```
+
 ## Starting the Application
 
 To start the application, run the following command:
 
+1. Front-End
+
 ```sh
 npm start
 ```
+
+2. Back-End
+
+```sh
+npm run start:backend
+```
+
+## Database
+
+1. Acces:
+
+Use this [url](http://localhost:28080/?server=mysql&username=user&db=web-memory-game-hpm).

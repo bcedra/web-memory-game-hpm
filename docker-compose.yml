@@ -1,0 +1,21 @@
+version: '3'
+services:
+  mysql:
+    image: 'mysql:8.0'
+    ports:
+      - '3307:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: 'web-memory-game-hpm'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'user'
+    volumes:
+      - './.data/mysql:/var/lib/mysql'
+
+  adminer:
+    image: 'adminer'
+    ports:
+      - '28080:8080'
+    environment:
+      - ADMINER_DEFAULT_SERVER=mysql
+      - ADMINER_PLUGINS=json-column tables-filter tinymce enum-types
