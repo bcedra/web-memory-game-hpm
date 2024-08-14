@@ -43,9 +43,19 @@ async function main() {
     `);
 	console.log('Leaderboard table created or already exists.');
 
+	app.use(
+		express.json({
+			limit: '1mb',
+		}),
+	);
+
 	// routes
 	app.get('/hello-world', (req, res) => {
 		res.send('Hello World');
+	});
+
+	app.post('/hello-world', (req, res) => {
+		res.send(req.body);
 	});
 }
 
