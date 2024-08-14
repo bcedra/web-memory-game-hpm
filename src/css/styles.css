@@ -131,6 +131,10 @@ td:hover {
 	background-color: lightblue;
 	transform: rotateY(180deg);
 }
+img {
+	width: 70px;
+	height: 70px;
+}
 
 img {
 	width: 90px;
