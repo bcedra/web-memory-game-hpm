@@ -1,3 +1,5 @@
+import { changeLang } from './translations.js';
+
 function saveSettings() {
 	const languageSelected = document.getElementById('languageSelector').value;
 	const difficultySelected = document.getElementById('difficultySelector').value;
@@ -8,6 +10,10 @@ function saveSettings() {
 		difficultySelected: difficultySelected,
 		categorySelected: categorySelected,
 	};
+
+	if (languageSelected) {
+		changeLang(languageSelected);
+	}
 
 	const settingsJSON = JSON.stringify(settings);
 	localStorage.setItem('settingsJSON', settingsJSON);

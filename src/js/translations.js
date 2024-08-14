@@ -23,9 +23,21 @@ function updateTextContent(translations) {
 	});
 }
 
+export async function changeLang(language) {
+	const translations = await loadTranslations(language);
+	updateTextContent(translations);
+}
+
 // Function to initialize translations
 export async function initializeTranslations() {
-	const userLanguage = navigator.language.split('-')[0];
+	let userLanguage = navigator.language.split('-')[0];
+	const settingsJSON = localStorage.getItem('settingsJSON');
+	if (settingsJSON) {
+		const settings = JSON.parse(settingsJSON);
+		if (settings?.languageSelected) {
+			userLanguage = settings.languageSelected;
+		}
+	}
 	const language = ['en', 'ro'].includes(userLanguage) ? userLanguage : DEFAULT_LANGUAGE;
 
 	const translations = await loadTranslations(language);
