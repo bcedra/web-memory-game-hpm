@@ -1,17 +1,3 @@
-function setDefaultValues() {
-	const defaultSettings = {
-		languageSelected: 'en',
-		difficultySelected: 'easy',
-		categorySelected: 'numbers',
-	};
-
-	document.getElementById('languageSelector').value = defaultSettings.languageSelected;
-	document.getElementById('difficultySelector').value = defaultSettings.difficultySelected;
-	document.getElementById('categorySelector').value = defaultSettings.categorySelected;
-
-	localStorage.setItem('settingsJSON', JSON.stringify(defaultSettings));
-}
-
 function saveSettings() {
 	const languageSelected = document.getElementById('languageSelector').value;
 	const difficultySelected = document.getElementById('difficultySelector').value;
@@ -38,30 +24,14 @@ function loadSettings() {
 	} else {
 		setDefaultValues();
 	}
-
-	if (settingsJSON.categorySelected) {
-		categorySelector.value = settingsJSON.categorySelected;
-	}
-
-	console.log(settingsJSON.categorySelected);
-
-	categorySelector.onchange = function () {
-		const categorySelected = categorySelector.value;
-
-		settingsJSON.categorySelected = categorySelected;
-		localStorage.setItem('settingsJSON', JSON.stringify('settingsJSON'));
-
-		const storedSettings = JSON.parse(localStorage.getItem('settingsJSON'));
-		console.log(storedSettings.categorySelected);
-	};
 }
 
-document.getElementById('languageSelector').addEventListener('change', saveSettings);
-document.getElementById('difficultySelector').addEventListener('change', saveSettings);
-document.getElementById('categorySelector').addEventListener('change', saveSettings);
+function addChangeListeners() {
+	document.getElementById('languageSelector').addEventListener('change', saveSettings);
+	document.getElementById('difficultySelector').addEventListener('change', saveSettings);
+	document.getElementById('categorySelector').addEventListener('change', saveSettings);
 
-document.addEventListener('DOMContentLoaded', () => {
-	addInputsChangeEvents();
-});
+	window.addEventListener('load', loadSettings);
+}
 
-window.addEventListener('load', loadSettings);
+addChangeListeners();

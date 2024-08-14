@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "live-server src --port=8082",
+		"start:backend": "nodemon api/index.js",
 		"prettier:format": "prettier --write \"src/**/*.{js,html,css}\"",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -13,6 +14,12 @@
 	"license": "ISC",
 	"devDependencies": {
 		"live-server": "^1.2.2",
+		"nodemon": "^3.1.4",
 		"prettier": "^3.3.3"
+	},
+	"dependencies": {
+		"dotenv": "^16.4.5",
+		"express": "^4.19.2",
+		"mysql2": "^3.11.0"
 	}
 }
