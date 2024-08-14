@@ -204,6 +204,10 @@ function createTable() {
 			flip.addEventListener('click', function () {
 				if (lockBoard || this.classList.contains('flipped')) return;
 
+				document.querySelectorAll('.flip.selected').forEach((card) => {
+					card.classList.remove('selected');
+				});
+
 				this.classList.add('flipped', 'selected');
 				flippedCards.push(this);
 
@@ -253,6 +257,13 @@ function checkMatch() {
 function matchedAndReset() {
 	flippedCards = [];
 	lockBoard = false;
+
+	if (checkMatch) {
+		document.querySelectorAll('.flip.selected').forEach((card) => {
+			card.classList.remove('selected');
+		});
+	}
+
 	checkIfAllCardsMatched();
 }
 
