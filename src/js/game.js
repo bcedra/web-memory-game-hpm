@@ -12,6 +12,8 @@ var timerInterval;
 var sec = 0;
 var min = 0;
 var size;
+var failedPairs = 0;
+var categorySelectedByUser;
 
 function difficulty() {
 	const settingsJSON = JSON.parse(localStorage.getItem('settingsJSON'));
@@ -21,14 +23,28 @@ function difficulty() {
 		case 'easy':
 			size = 4;
 			break;
-		case 'medium':
-			size = 6;
-			break;
 		case 'hard':
-			size = 8;
+			size = 6;
 			break;
 		default:
 			size = 4;
+			break;
+	}
+}
+
+function category() {
+	const categoryJSON = JSON.parse(localStorage.getItem('settingsJSON'));
+	const categorySelected = categoryJSON.categorySelected;
+
+	switch (categorySelected) {
+		case 'numbers':
+			categorySelectedByUser = 1;
+			break;
+		case 'fruits':
+			categorySelectedByUser = 2;
+			break;
+		default:
+			categorySelectedByUser = 1;
 			break;
 	}
 }
@@ -56,6 +72,8 @@ function resetTimer() {
 
 function handleReplayButton() {
 	resetTimer();
+	failedPairs = 0;
+	displayFails();
 	createTable();
 	timer();
 }
@@ -88,6 +106,7 @@ function handleStartButton() {
 		document.getElementById('game-screen').hidden = false;
 
 		difficulty();
+		category();
 		resetTimer();
 		timer();
 		createTable();
@@ -99,6 +118,10 @@ function displayUsername() {
 	if (savedUsername) {
 		document.getElementById('username').textContent = savedUsername;
 	}
+}
+
+function displayFails() {
+	document.getElementById('failed-pairs').textContent = `Failed : ${failedPairs}`;
 }
 
 export function addStartListeners() {
@@ -128,9 +151,6 @@ var lockBoard = false;
 var cardsArr = [];
 
 function createTable() {
-	const settingsJSON = JSON.parse(localStorage.getItem('settingsJSON'));
-	const difficultySelected = settingsJSON.difficultySelected;
-
 	var table = document.getElementById('game-board');
 	table.innerHTML = '';
 
@@ -166,7 +186,13 @@ function createTable() {
 			var back = document.createElement('div');
 			back.classList.add('back');
 
-			back.textContent = number;
+			if (categorySelectedByUser === 1) {
+				back.textContent = number;
+			} else {
+				var img = document.createElement('img');
+				img.src = `../assets/Fruits/${number}.png`;
+				back.appendChild(img);
+			}
 
 			flip.appendChild(front);
 			flip.appendChild(back);
@@ -178,7 +204,11 @@ function createTable() {
 			flip.addEventListener('click', function () {
 				if (lockBoard || this.classList.contains('flipped')) return;
 
-				this.classList.add('flipped');
+				document.querySelectorAll('.flip.selected').forEach((card) => {
+					card.classList.remove('selected');
+				});
+
+				this.classList.add('flipped', 'selected');
 				flippedCards.push(this);
 
 				if (flippedCards.length === 2) checkMatch();
@@ -194,21 +224,46 @@ function createTable() {
 function checkMatch() {
 	const [first, second] = flippedCards;
 
-	if (first.querySelector('.back').textContent === second.querySelector('.back').textContent) {
-		matchedAndReset(true);
+	if (categorySelectedByUser === 1) {
+		if (first.querySelector('.back').textContent === second.querySelector('.back').textContent) {
+			matchedAndReset(true);
+		} else {
+			lockBoard = true;
+			failedPairs++;
+			displayFails();
+			setTimeout(() => {
+				first.classList.remove('flipped', 'selected');
+				second.classList.remove('flipped', 'selected');
+				matchedAndReset(false);
+			}, 400);
+		}
 	} else {
-		lockBoard = true;
-		setTimeout(() => {
-			first.classList.remove('flipped');
-			second.classList.remove('flipped');
-			matchedAndReset(false);
-		}, 1000);
+		//daca e img
+		if (first.querySelector('.back img').src === second.querySelector('.back img').src) {
+			matchedAndReset(true);
+		} else {
+			lockBoard = true;
+			failedPairs++;
+			displayFails();
+			setTimeout(() => {
+				first.classList.remove('flipped', 'selected');
+				second.classList.remove('flipped', 'selected');
+				matchedAndReset(false);
+			}, 400);
+		}
 	}
 }
 
 function matchedAndReset() {
 	flippedCards = [];
 	lockBoard = false;
+
+	if (checkMatch) {
+		document.querySelectorAll('.flip.selected').forEach((card) => {
+			card.classList.remove('selected');
+		});
+	}
+
 	checkIfAllCardsMatched();
 }
 
