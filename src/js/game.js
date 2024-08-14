@@ -65,7 +65,7 @@ function handleStartButton() {
 	let hasError = false;
 
 	const username = document.getElementById('name').value.trim();
-	const avatar = document.getElementById('avatar').value;
+	const avatar = document.getElementById('avatar').src;
 
 	if (!username) {
 		setError('name', 'Please enter your nickname!');
@@ -80,9 +80,10 @@ function handleStartButton() {
 
 	if (avatar) {
 		document.getElementById('username').textContent = username;
-		document.getElementById('user-avatar').src = 'path/to/${avatar}.png';
+		document.getElementById('user-avatar').src = avatar;
 
 		localStorage.setItem('username', username);
+		localStorage.setItem('selectedAvatar', avatar);
 
 		document.getElementById('setup-screen').hidden = true;
 		document.getElementById('game-screen').hidden = false;
@@ -236,3 +237,31 @@ function clearErrors() {
 	const inputElements = document.querySelectorAll('.input-error');
 	inputElements.forEach((el) => el.classList.remove('input-error'));
 }
+const avatars = ['assets/avatars/1.png', 'assets/avatars/2.png', 'assets/avatars/3.png', 'assets/avatars/4.png', 'assets/avatars/5.png'];
+
+let currentAvatar = 0;
+const avatarImage = document.getElementById('avatar');
+const prevButton = document.getElementById('previous-button');
+const nextButton = document.getElementById('next-button');
+
+function updateAvatar() {
+	avatarImage.src = avatars[currentAvatar];
+}
+
+prevButton.addEventListener('click', function () {
+	currentAvatar = currentAvatar === 0 ? avatars.length - 1 : currentAvatar - 1;
+	updateAvatar();
+});
+
+nextButton.addEventListener('click', function () {
+	currentAvatar = currentAvatar === avatars.length - 1 ? 0 : currentAvatar + 1;
+	updateAvatar();
+});
+window.onload = function () {
+	const savedAvatar = localStorage.getItem('selectedAvatar');
+
+	if (savedAvatar) {
+		document.getElementById('avatar').src = savedAvatar;
+		document.getElementById('user-avatar').src = savedAvatar;
+	}
+};
