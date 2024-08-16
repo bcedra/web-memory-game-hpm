@@ -57,6 +57,11 @@ async function main() {
 	app.post('/hello-world', (req, res) => {
 		res.send(req.body);
 	});
+
+	app.get('/leaderboard', async (req, res) => {
+		const [n] = await pool.query('SELECT * FROM leaderboard');
+		res.json(n);
+	});
 }
 
 main();
