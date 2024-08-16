@@ -16,11 +16,12 @@
 	"ro": "Romanian",
 	"Settings": "Settings",
 	"Play": "Play!",
-    "Fruits": "Fruits",
-    "Numbers": "Numbers",
+	"Fruits": "Fruits",
+	"Numbers": "Numbers",
 	"Leaderboard": "Leaderboard",
 	"Position": "Position",
 	"Time": "Time",
-	"Name": "Name",
-	"MemoryGame": "Memory Game"
+	"Name": "Username",
+	"MemoryGame": "Memory Game",
+	"Attempts": "Attempts"
 }
