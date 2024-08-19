@@ -57,6 +57,27 @@ async function main() {
 	app.post('/hello-world', (req, res) => {
 		res.send(req.body);
 	});
+
+	app.post('/leaderboard', async (req, res) => {
+		const { username, difficulty, time_in_seconds, attempts } = req.body;
+		
+		// check if all fields have a value
+		if (!username || !difficulty || time_in_seconds === undefined || attempts === undefined) {
+			return res.status(400).json({ error: 'All fields are required' });
+		} 
+
+		try {
+			//  insert data into table
+			await pool.execute(`INSERT INTO leaderboard (username, difficulty, time_in_seconds, attempts) VALUES ("${username}", "${difficulty}", ${time_in_seconds}, ${attempts})`);
+
+			// success code
+			return res.status(200).json({ message: 'Leaderboard entry successful' });
+		} catch (error) {
+			// error code
+			console.error('Error:', error);
+			return res.status(500).json({ error: 'Error' });
+		}
+	});
 }
 
 main();
