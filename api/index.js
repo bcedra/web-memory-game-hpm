@@ -64,6 +64,8 @@ async function main() {
 		const [n] = await pool.query('SELECT * FROM leaderboard');
 		res.json(n);
 	});
+
+	app.post('/leaderboard', async (req, res) => {});
 }
 
 main();
