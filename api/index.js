@@ -64,7 +64,7 @@ async function main() {
 		const { username, difficulty, time_in_seconds, attempts } = req.body;
 
 		// check if all fields have a value
-		if (!username || !difficulty || time_in_seconds === undefined || attempts === undefined) {
+		if (!username || !difficulty || !time_in_seconds || !attempts) {
 			return res.status(400).json({ error: 'All fields are required' });
 		}
 

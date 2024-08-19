@@ -30,6 +30,8 @@ function difficulty() {
 			size = 4;
 			break;
 	}
+
+	localStorage.setItem('difficulty', difficultySelected);
 }
 
 function category() {
@@ -232,6 +234,9 @@ function checkMatch() {
 			lockBoard = true;
 			failedPairs++;
 			displayFails();
+
+			localStorage.setItem('attempts', failedPairs.toString());
+
 			setTimeout(() => {
 				first.classList.remove('flipped', 'selected');
 				second.classList.remove('flipped', 'selected');
@@ -246,6 +251,9 @@ function checkMatch() {
 			lockBoard = true;
 			failedPairs++;
 			displayFails();
+
+			localStorage.setItem('attempts', failedPairs.toString());
+
 			setTimeout(() => {
 				first.classList.remove('flipped', 'selected');
 				second.classList.remove('flipped', 'selected');
@@ -272,7 +280,35 @@ function checkIfAllCardsMatched() {
 	const allCardsFlipped = cardsArr.every((card) => card.querySelector('.flip').classList.contains('flipped'));
 	if (allCardsFlipped) {
 		clearInterval(timerInterval); //stop the timer
-		//alert('Felicitari!');
+		const timeInSeconds = min * 60 + sec;
+		localStorage.setItem('time_in_seconds', timeInSeconds.toString());
+
+		const username = localStorage.getItem('username');
+		const difficulty = localStorage.getItem('difficulty');
+		const time_in_seconds = localStorage.getItem('time_in_seconds');
+		const attempts = localStorage.getItem('attempts');
+
+		const data = {
+			username: username,
+			difficulty: difficulty,
+			time_in_seconds: parseInt(time_in_seconds, 10),
+			attempts: parseInt(attempts, 10),
+		};
+
+		fetch('http://localhost:3000/leaderboard', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(data),
+		})
+			.then((res) => res.json())
+			.then((succ) => {
+				console.log('Success', succ);
+			})
+			.catch((err) => {
+				console.error('Error', err);
+			});
 	}
 }
 
