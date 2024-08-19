@@ -82,8 +82,21 @@ async function main() {
 	});
 
 	app.get('/leaderboard', async (req, res) => {
-		const [n] = await pool.query('SELECT * FROM leaderboard');
-		res.json(n);
+		try {
+			const difficulty = req.query.difficulty;
+			let query = 'SELECT * FROM leaderboard';
+
+			if (difficulty) {
+				query += ' WHERE difficulty="' + difficulty + '"';
+			}
+
+			console.log(query);
+			const [n] = await pool.query(query);
+			res.json(n);
+		} catch (error) {
+			console.error('Error:', error);
+			return res.status(500).json({ error: 'Error' });
+		}
 	});
 }
 

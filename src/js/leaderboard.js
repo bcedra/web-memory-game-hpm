@@ -21,3 +21,17 @@ function createTable(leaderboardData) {
 }
 
 uploadLeaderboard();
+
+document.getElementById('sort-selector').addEventListener('change', () => {
+	const sortByDifficulty = document.getElementById('sort-selector').value;
+
+	fetch(`http://localhost:3000/leaderboard?difficulty=${sortByDifficulty}`)
+		.then((res) => res.json())
+		.then((data) => {
+			createTable(data);
+			console.log('Success', data);
+		})
+		.catch((err) => {
+			console.error('Error', err);
+		});
+});
