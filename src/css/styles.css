@@ -364,13 +364,8 @@ img {
 	color: #ffffffc4;
 }
 .settingsDropdowns {
-	width: 50px;
-	height: 20px;
-	margin: 12px;
-	padding: 12px 20px;
-	border-radius: 50px;
+	height: 30px;
 	font-size: 20px;
-	font-weight: 800;
 }
 #categSelDiv {
 	border-radius: 20px;
@@ -412,6 +407,7 @@ img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 }
 .column {
 	font-family: 'Liquid', sans-serif;
