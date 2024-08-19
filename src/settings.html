@@ -10,32 +10,32 @@
 	<body>
         <header>
 			<a href="index.html">
-				<button type="button" id="backButton" data-translate="Back">Back</button>
+				<button type="button" id="backButton" data-translate="Back" class="button">Back</button>
 			</a>
-			<h1 data-translate="Settings">Settings</h1>
+			<h1 data-translate="Settings" class="glow" id="settings-title">Settings</h1>
 		</header>
         <div class="settingsMenuOptions">
-				<div data-translate="Language" id="langSelDiv">
+				<div data-translate="Language" id="langSelDiv" class="input">
 					Language
                 </div>
 					<select class="settingsDropdowns" id="languageSelector">
-						<option data-translate="en" value="en">English</option>
-						<option data-translate="ro" value="ro">Romanian</option>
+						<option data-translate="en" value="en" class="option-lang">English</option>
+						<option data-translate="ro" value="ro" class="option-lang">Romanian</option>
 					</select>
 
-				<div data-translate="Difficulty" id="difficultySelDiv">
+				<div data-translate="Difficulty" id="difficultySelDiv" class="input">
 					Difficulty
                 </div>
 					<select class="settingsDropdowns" id="difficultySelector">
-						<option data-translate="Easy" value="easy">Easy</option>
-						<option data-translate="Hard" value="hard">Hard</option>
+						<option data-translate="Easy" value="easy" class="option">Easy</option>
+						<option data-translate="Hard" value="hard" class="option">Hard</option>
 					</select>
-				<div data-translate="Category" id="categSelDiv">
+				<div data-translate="Category" id="categSelDiv" class="input">
                     Category
                 </div>
 				<select class="settingsDropdowns" id="categorySelector">
-					<option data-translate="numbers" value="numbers">Numbers</option>
-					<option data-translate="fruits" value="fruits">Fruits</option>
+					<option data-translate="Numbers" value="numbers" class="option">Numbers</option>
+					<option data-translate="Fruits" value="fruits" class="option">Fruits</option>
 				</select>
 			    </div>
 		</div>

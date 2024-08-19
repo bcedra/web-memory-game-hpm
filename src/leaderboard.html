@@ -13,22 +13,21 @@
 		<a href="index.html">
 		<button type="button" id="backButton" data-translate="Back">Back</button>
 		</a>
-		<h1 data-translate="Leaderboard">Leaderboard</h1>
+		<h1 data-translate="Leaderboard" class="glow">Leaderboard</h1>
 		</header>
 		<div class="container">
-			<table class="table">
+			<table class="leaderboard-table">
 				<thead>
 					<tr>
-						<th data-translate="Name">Name</th>
-						<th data-translate="Difficulty">Difficulty</th>
-						<th data-translate="Time">Time in seconds</th>
-						<th data-translate="Attempts">Attempts</th>
+						<th data-translate="Name" class="column">Name</th>
+						<th data-translate="Difficulty" class="column">Difficulty</th>
+						<th data-translate="Time" class="column">Time in seconds</th>
+						<th data-translate="Attempts" class="column">Attempts</th>
 					</tr>
 				</thead>
 				<tbody id="data"></tbody>
 			</table>
 		</div>
-
 		<script type="module" src="js/leaderboard.js"></script>
 	</body>
 </html>

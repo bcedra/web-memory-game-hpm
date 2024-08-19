@@ -5,36 +5,36 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>web-memory-game-hpm</title>
 		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 	</head>
 
 	<body>
 		<div id="setup-screen">
-			<label for="name-label" data-translate="EnterName"></label>
-			<input type="text" id="name" required />
+			<label for="name-label" data-translate="EnterName" class="input"></label>
+			<input type="text" id="name" class="input" required />
 
 			<div class="selection">
-				<label for="avatar" data-translate="SelectAvatar"></label>
-				<button id="previous-button">Previous</button>
+				<label for="avatar" data-translate="SelectAvatar" class="input"></label>
+				<button id="previous-button" class="button"><i class="fa fa-angle-left"></i></button>
 				<img id="avatar" src="./assets/avatars/1.png" />
-				<button id="next-button">Next</button>
+				<button id="next-button" class="button"><i class="fa fa-angle-right"></i></button>
 			</div>
-			<div><button type="button" id="start-button" data-translate="Start"></button></div>
+			<div><button type="button" class="button" id="start-button" data-translate="Start"></button></div>
 		</div>
 		<div id="game-screen" hidden="true">
-			<header>
+			<header class="game-header">
 				<a href="index.html">
-					<button id="exit-button" data-translate="Exit">&lt;</button>
+					<button id="exit-button" data-translate="Exit" class="button">&lt;</button>
 				</a>
-				<button id="replay-button" data-translate="Replay"></button>
 				<div id="timer" class="timer" data-translate="Timer">00:00</div>
 				<div class="user-info">
 					<img id="user-avatar" src="" alt="Avatar" />
 					<span id="username"></span>
 					<span id="failed-pairs"></span>
 				</div>
+				<button id="replay-button" data-translate="Replay" class="button"></button>
 			</header>
-			<h1 class="game-title">Memory Game</h1>
-			<table id="game-board"></table>
+			<table class="table-container" id="game-board"></table>
 		</div>
 		<script type="module" src="js/game.js"></script>
 	</body>

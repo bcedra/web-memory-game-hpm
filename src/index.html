@@ -4,26 +4,40 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>web-memory-game-hpm</title>
-		<!-- <link rel="stylesheet" href="css/styles.css" /> -->
+		<link rel="stylesheet" href="css/styles.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 	</head>
 
 	<body>
-		<h1 data-translate="MemoryGame">MEMORY GAME</h1>
-		<div>
+		<div class="area">
+			<ul class="circles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<h1 data-translate="MemoryGame" class="glow" id="title-1">MEMORY GAME</h1>
+
+		<div class="play">
 			<a href="game.html">
-				<i class="fa fa-gamepad"></i>
-				<button onclick() data-translate="Play">Play</button>
+				<button class="button" onclick()><i class="fa fa-play"></i> Play!</button>
 			</a>
 		</div>
-		<form class="settings">
-			<a href="settings.html">
+		<form>
+			<a href="settings.html" class="input" id="settings-button">
 				<i class="fa fa-gear"></i>
 				<span id="settings" data-translate="Settings">Settings</span>
 			</a>
 		</form>
 		<form>
-			<a href="leaderboard.html">
+			<a href="leaderboard.html" class="input" id="leaderboard-button">
 				<i class="fa fa-trophy"></i>
 				<span id="leaderboard" data-translate="Leaderboard">Leaderboard</span>
 			</a>
