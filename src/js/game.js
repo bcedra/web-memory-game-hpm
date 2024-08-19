@@ -328,6 +328,7 @@ function clearErrors() {
 	const inputElements = document.querySelectorAll('.input-error');
 	inputElements.forEach((el) => el.classList.remove('input-error'));
 }
+
 const avatars = ['assets/avatars/1.png', 'assets/avatars/2.png', 'assets/avatars/3.png', 'assets/avatars/4.png', 'assets/avatars/5.png'];
 
 let currentAvatar = 0;
@@ -348,6 +349,7 @@ nextButton.addEventListener('click', function () {
 	currentAvatar = currentAvatar === avatars.length - 1 ? 0 : currentAvatar + 1;
 	updateAvatar();
 });
+
 window.onload = function () {
 	const savedAvatar = localStorage.getItem('selectedAvatar');
 
