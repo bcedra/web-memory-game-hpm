@@ -15,12 +15,13 @@
 	"en": "Engleză",
 	"ro": "Română",
 	"Settings": "Setări",
-    "Numbers": "Numere",
+	"Numbers": "Numere",
 	"Play": "Joacă!",
-    "Fruits": "Fructe",
+	"Fruits": "Fructe",
 	"Leaderboard": "Clasament",
 	"Position": "Poziție",
 	"Time": "Timp",
 	"Name": "Nume",
-	"MemoryGame": "Joc de memorie"
+	"MemoryGame": "Joc de memorie",
+	"Attempts": "Incercari"
 }

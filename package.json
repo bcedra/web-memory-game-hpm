@@ -13,11 +13,12 @@
 	"author": "[Tania Souca, Ana Turc, Iulia Hanganu]",
 	"license": "ISC",
 	"devDependencies": {
-		"live-server": "^1.2.2",
+		"live-server": "^1.2.0",
 		"nodemon": "^3.1.4",
 		"prettier": "^3.3.3"
 	},
 	"dependencies": {
+		"cors": "^2.8.5",
 		"dotenv": "^16.4.5",
 		"express": "^4.19.2",
 		"mysql2": "^3.11.0"

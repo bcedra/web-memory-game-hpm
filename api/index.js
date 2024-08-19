@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2/promise');
+const cors = require('cors');
 
 const app = express();
 const port = process.env.API_PORT || 3000;
@@ -48,6 +49,7 @@ async function main() {
 			limit: '1mb',
 		}),
 	);
+	app.use(cors());
 
 	// routes
 	app.get('/hello-world', (req, res) => {
@@ -77,6 +79,11 @@ async function main() {
 			console.error('Error:', error);
 			return res.status(500).json({ error: 'Error' });
 		}
+	});
+
+	app.get('/leaderboard', async (req, res) => {
+		const [n] = await pool.query('SELECT * FROM leaderboard');
+		res.json(n);
 	});
 }
 
