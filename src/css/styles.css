@@ -7,9 +7,9 @@ body {
 }
 h1 {
 	text-align: center;
-	top: 20px;
+	top: 40px;
 	font-family: 'Liquid', sans-serif;
-	letter-spacing: 20px;
+	letter-spacing: 15px;
 	font-weight: 900;
 	display: block;
 	font-size: 70px;
@@ -446,4 +446,222 @@ img {
 	font-family: 'Liquid', sans-serif;
 	font-size: 20px;
 	color: #480930;
+}
+@media screen and (max-width: 480px) {
+	h1,
+	.glow {
+		font-size: 30px;
+	}
+	#settings-button {
+		top: 180px;
+		left: 20px;
+	}
+	#leaderboard-button {
+		top: 220px;
+		left: 20px;
+	}
+	.play {
+		top: 120px;
+	}
+	#input-label {
+		font-size: 15px;
+	}
+	#name {
+		width: 100px;
+		height: 20px;
+	}
+	#avatar-selection {
+		font-size: 15px;
+	}
+	#previous-button {
+		width: 60px;
+		height: 20px;
+		font-size: 10px;
+	}
+	#next-button {
+		width: 60px;
+		height: 20px;
+		font-size: 10px;
+	}
+	#avatar {
+		width: 50px;
+		height: 50px;
+	}
+	.selection {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	#start-button {
+		width: 100px;
+		height: 60px;
+		font-size: 20px;
+	}
+	#exit-button,
+	#replay-button {
+		width: 80px;
+		height: 30px;
+		font-size: 10px;
+	}
+	.timer {
+		width: 20px;
+		height: 10px;
+		font-size: 10px;
+	}
+	#user-avatar {
+		width: 30px;
+		height: 30px;
+	}
+	#username,
+	#failed-pairs {
+		font-size: 10px;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	#settings-button {
+		top: 180px;
+		left: 20px;
+	}
+	#leaderboard-button {
+		top: 220px;
+		left: 20px;
+	}
+	.play {
+		top: 120px;
+	}
+}
+
+@media screen and (min-height: 800px) {
+	.play {
+		top: 160px;
+	}
+	#leaderboard-button {
+		top: 340px;
+		left: 20px;
+	}
+	#settings-button {
+		top: 300px;
+		left: 20px;
+	}
+	.table-container {
+		margin-top: 30px;
+	}
+}
+
+@media screen and (max-height: 800px) {
+	.play {
+		top: 120px;
+	}
+	#leaderboard-button {
+		top: 220px;
+		left: 20px;
+	}
+	#settings-button {
+		top: 180px;
+		left: 20px;
+	}
+}
+
+@media screen and (min-height: 1000px) {
+	.play {
+		top: 320px;
+	}
+	#leaderboard-button {
+		top: 420px;
+		left: 20px;
+	}
+	#settings-button {
+		top: 380px;
+		left: 20px;
+	}
+}
+
+@media screen and (min-width: 700px) {
+	#input-label {
+		font-size: 30px;
+	}
+	#name {
+		width: 300px;
+		height: 60px;
+	}
+}
+
+@media screen and (max-height: 730px) {
+	#input-label {
+		font-size: 15px;
+	}
+	#name {
+		width: 100px;
+		height: 20px;
+	}
+	#avatar-selection {
+		font-size: 15px;
+	}
+	#previous-button {
+		width: 60px;
+		height: 20px;
+		font-size: 10px;
+	}
+	#next-button {
+		width: 60px;
+		height: 20px;
+		font-size: 10px;
+	}
+	#avatar {
+		width: 50px;
+		height: 50px;
+	}
+	.selection {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	#start-button {
+		width: 100px;
+		height: 60px;
+		font-size: 20px;
+	}
+}
+@media screen and (max-width: 600px) {
+	.card,
+	.flip,
+	.front,
+	.back {
+		width: 50px;
+		height: 50px;
+	}
+	img {
+		width: 40px;
+		height: 40px;
+	}
+	.table-container {
+		margin-top: 140px;
+	}
+}
+@media screen and (min-width: 750px) {
+	.table-container {
+		margin-top: 180px;
+	}
+}
+@media screen and (max-height: 600px) {
+	.table-container {
+		margin-top: 30px;
+	}
+	.card,
+	.flip,
+	.front,
+	.back {
+		width: 70px;
+		height: 70px;
+	}
+	img {
+		width: 60px;
+		height: 60px;
+	}
+}
+@media screen and (min-width: 1200px) {
+	.table-container {
+		margin-top: 20px;
+	}
 }
