@@ -352,7 +352,14 @@ td:hover {
 	font-size: 20px;
 	font-weight: 800;
 	color: black;
-	padding: 35px;
+	padding: 10px;
+}
+
+#failed-pairs-label {
+	font-family: 'Liquid', sans-serif;
+	font-size: 20px;
+	font-weight: 800;
+	color: black;
 }
 
 #user-avatar,
@@ -363,7 +370,7 @@ td:hover {
 }
 #replay-button {
 	text-align: center;
-	font-size: 15px;
+	font-size: 20px;
 }
 img {
 	width: 90px;

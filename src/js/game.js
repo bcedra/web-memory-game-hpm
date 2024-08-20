@@ -131,7 +131,7 @@ function displayUsername() {
 }
 
 function displayFails() {
-	document.getElementById('failed-pairs').textContent = `Failed : ${failedPairs}`;
+	document.getElementById('failed-pairs').textContent = ` ${failedPairs}`;
 }
 
 export function addStartListeners() {
