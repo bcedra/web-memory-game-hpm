@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	addStartListeners();
 	displayUsername();
 	clearErrors();
+	const name = document.getElementById('name');
+
+	name.addEventListener('blur', onNameBlur);
 });
 
 var timerInterval;
@@ -92,7 +95,7 @@ function handleStartButton() {
 	const avatar = document.getElementById('avatar').src;
 
 	if (!username) {
-		setError('name', '');
+		setError('name');
 		hasError = true;
 	}
 
@@ -327,19 +330,12 @@ function checkIfAllCardsMatched() {
 	}
 }
 
-function setError(elementId, message) {
+function setError(elementId) {
 	const element = document.getElementById(elementId);
-	const errorElement = document.createElement('span');
-	errorElement.className = 'error-message';
-	errorElement.textContent = message;
-	element.parentElement.appendChild(errorElement);
 	element.classList.add('input-error');
 }
 
 function clearErrors() {
-	const errorMessages = document.querySelectorAll('.error-message');
-	errorMessages.forEach((msg) => msg.remove());
-
 	const inputElements = document.querySelectorAll('.input-error');
 	inputElements.forEach((el) => el.classList.remove('input-error'));
 }
@@ -365,13 +361,11 @@ nextButton.addEventListener('click', function () {
 	updateAvatar();
 });
 
-function myFunction() {
-	clearErrors();
+function onNameBlur() {
+	if (document.getElementById('name')) {
+		clearErrors();
+	}
 }
-
-const name = document.getElementById('name');
-
-name.addEventListener('onblur', myFunction());
 
 window.onload = function () {
 	const savedAvatar = localStorage.getItem('selectedAvatar');
