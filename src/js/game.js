@@ -94,9 +94,6 @@ function handleStartButton() {
 	if (!username) {
 		setError('name', '');
 		hasError = true;
-	} else if (username.length > 0) {
-		clearErrors();
-		hasError = false;
 	}
 
 	if (hasError) {
@@ -347,11 +344,6 @@ function clearErrors() {
 	inputElements.forEach((el) => el.classList.remove('input-error'));
 }
 
-function myFunction() {
-	let x = document.getElementById('name');
-	x.value = x.value.clearErrors();
-}
-
 const avatars = ['assets/avatars/1.png', 'assets/avatars/2.png', 'assets/avatars/3.png', 'assets/avatars/4.png', 'assets/avatars/5.png'];
 
 let currentAvatar = 0;
@@ -372,6 +364,14 @@ nextButton.addEventListener('click', function () {
 	currentAvatar = currentAvatar === avatars.length - 1 ? 0 : currentAvatar + 1;
 	updateAvatar();
 });
+
+function myFunction() {
+	clearErrors();
+}
+
+const name = document.getElementById('name');
+
+name.addEventListener('onblur', myFunction());
 
 window.onload = function () {
 	const savedAvatar = localStorage.getItem('selectedAvatar');
