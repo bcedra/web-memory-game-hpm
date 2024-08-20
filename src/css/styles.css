@@ -321,7 +321,7 @@ td:hover {
 .selection {
 	text-align: center;
 	position: relative;
-	top: 150px;
+	top: 100px;
 	display: flex;
 	justify-content: center;
 	align-items: center;

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initializeTranslations();
 	addStartListeners();
 	displayUsername();
+	clearErrors();
 });
 
 var timerInterval;
@@ -93,6 +94,9 @@ function handleStartButton() {
 	if (!username) {
 		setError('name', '');
 		hasError = true;
+	} else if (username.length > 0) {
+		clearErrors();
+		hasError = false;
 	}
 
 	if (hasError) {
@@ -287,6 +291,13 @@ function checkIfAllCardsMatched() {
 	const allCardsFlipped = cardsArr.every((card) => card.querySelector('.flip').classList.contains('flipped'));
 	if (allCardsFlipped) {
 		clearInterval(timerInterval); //stop the timer
+
+		confetti({
+			particleCount: 100,
+			spread: 70,
+			origin: { y: 0.8 },
+		});
+
 		const timeInSeconds = min * 60 + sec;
 		localStorage.setItem('time_in_seconds', timeInSeconds.toString());
 
@@ -334,6 +345,11 @@ function clearErrors() {
 
 	const inputElements = document.querySelectorAll('.input-error');
 	inputElements.forEach((el) => el.classList.remove('input-error'));
+}
+
+function myFunction() {
+	let x = document.getElementById('name');
+	x.value = x.value.clearErrors();
 }
 
 const avatars = ['assets/avatars/1.png', 'assets/avatars/2.png', 'assets/avatars/3.png', 'assets/avatars/4.png', 'assets/avatars/5.png'];
