@@ -311,7 +311,12 @@ td:hover {
 
 .back {
 	background-color: white;
+	font-size: 60px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
 	transform: rotateY(180deg);
+	color: #a50f6b;
+	animation: glow 1s ease-in-out infinite alternate;
 }
 #setup-screen {
 	text-align: center;
