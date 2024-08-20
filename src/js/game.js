@@ -45,6 +45,9 @@ function category() {
 		case 'fruits':
 			categorySelectedByUser = 2;
 			break;
+		case 'flags':
+			categorySelectedByUser = 3;
+			break;
 		default:
 			categorySelectedByUser = 1;
 			break;
@@ -191,9 +194,13 @@ function createTable() {
 
 			if (categorySelectedByUser === 1) {
 				back.textContent = number;
-			} else {
+			} else if (categorySelectedByUser === 2) {
 				var img = document.createElement('img');
 				img.src = `../assets/Fruits/${number}.png`;
+				back.appendChild(img);
+			} else {
+				var img = document.createElement('img');
+				img.src = `../assets/Countries/${number}.png`;
 				back.appendChild(img);
 			}
 
