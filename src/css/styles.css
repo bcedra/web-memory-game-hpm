@@ -1,3 +1,7 @@
+html {
+	font-family: 'Liquid', sans-serif;
+}
+
 body {
 	background-image: linear-gradient(90deg, rgb(108, 21, 82) 0%, rgb(150, 29, 96) 35%, rgb(150, 66, 114) 100%);
 	background-repeat: no-repeat;
@@ -312,7 +316,7 @@ td:hover {
 .back {
 	background-color: white;
 	font-size: 60px;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: 'Liquid', sans-serif;
 	font-weight: bold;
 	transform: rotateY(180deg);
 	color: #a50f6b;
