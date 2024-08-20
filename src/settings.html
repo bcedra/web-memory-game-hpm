@@ -8,37 +8,35 @@
 	</head>
 
 	<body>
-        <header>
+		<header>
 			<a href="index.html">
 				<button type="button" id="backButton" data-translate="Back" class="button">Back</button>
 			</a>
 			<h1 data-translate="Settings" class="glow" id="settings-title">Settings</h1>
 		</header>
-        <div class="settingsMenuOptions">
-				<div data-translate="Language" id="langSelDiv" class="input">
-					Language
-                </div>
-					<select class="settingsDropdowns" id="languageSelector">
-						<option data-translate="en" value="en" class="option-lang">English</option>
-						<option data-translate="ro" value="ro" class="option-lang">Romanian</option>
-					</select>
-
-				<div data-translate="Difficulty" id="difficultySelDiv" class="input">
-					Difficulty
-                </div>
-					<select class="settingsDropdowns" id="difficultySelector">
-						<option data-translate="Easy" value="easy" class="option">Easy</option>
-						<option data-translate="Hard" value="hard" class="option">Hard</option>
-					</select>
-				<div data-translate="Category" id="categSelDiv" class="input">
-                    Category
-                </div>
-				<select class="settingsDropdowns" id="categorySelector">
-					<option data-translate="Numbers" value="numbers" class="option">Numbers</option>
+		<div class="settingsMenuOptions">
+			<label for="language" data-translate="Language" class="labels"></label>
+			<div class="settingsMenuOptions">
+				<select id="languageSelector" class="settingsDropdowns">
+					<option data-translate="en" value="en" selected class="option">English</option>
+					<option data-translate="ro" value="ro" class="option">Romanian</option>
+				</select>
+			</div>
+			<label for="difficulty" data-translate="Difficulty" class="labels"></label>
+			<div class="settingsMenuOptions">
+				<select id="difficultySelector" class="settingsDropdowns">
+					<option data-translate="Easy" value="easy" selected class="option">Easy</option>
+					<option data-translate="Hard" value="hard" class="option">Hard</option>
+				</select>
+			</div>
+			<label for="category" data-translate="Category" class="labels"></label>
+			<div class="settingsMenuOptions">
+				<select id="categorySelector" class="settingsDropdowns">
+					<option data-translate="Numbers" value="numbers" selected class="option">Numbers</option>
 					<option data-translate="Fruits" value="fruits" class="option">Fruits</option>
 					<option data-translate="Country flags" value="flags" class="option">Country flags</option>
 				</select>
-			    </div>
+			</div>
 		</div>
 		<script type="module" src="js/settings.js"></script>
 		<script type="module" src="js/main.js"></script>
