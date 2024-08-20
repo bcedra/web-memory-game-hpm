@@ -10,10 +10,14 @@
 
 	<body>
 		<header>
-		<a href="index.html">
-		<button type="button" id="backButton" data-translate="Back">Back</button>
-		</a>
-		<h1 data-translate="Leaderboard" class="glow">Leaderboard</h1>
+			<a href="index.html">
+				<button type="button" id="backButton" data-translate="Back">Back</button>
+			</a>
+			<h1 data-translate="Leaderboard" class="glow">Leaderboard</h1>
+			<select id="sort-selector">
+				<option data-translate="hard" value="hard" selected>Difficulty Hard</option>
+				<option data-translate="easy" value="easy">Difficulty Easy</option>
+			</select>
 		</header>
 		<div class="container">
 			<table class="leaderboard-table">

@@ -1,10 +1,11 @@
-async function uploadLeaderboard() {
-	fetch('http://localhost:3000/leaderboard')
-		.then((res) => res.json())
-		.then((data) => {
-			createTable(data);
-			console.log(data);
-		});
+async function uploadLeaderboard(difficulty = 'hard') {
+	try {
+		const response = await fetch(`http://localhost:3000/leaderboard?difficulty=${difficulty}`);
+		const data = await response.json();
+		createTable(data);
+	} catch (error) {
+		console.error('Error', error);
+	}
 }
 
 function createTable(leaderboardData) {
@@ -21,3 +22,17 @@ function createTable(leaderboardData) {
 }
 
 uploadLeaderboard();
+
+document.getElementById('sort-selector').addEventListener('change', () => {
+	const sortByDifficulty = document.getElementById('sort-selector').value;
+
+	fetch(`http://localhost:3000/leaderboard?difficulty=${sortByDifficulty}`)
+		.then((res) => res.json())
+		.then((data) => {
+			createTable(data);
+			console.log('Success', data);
+		})
+		.catch((err) => {
+			console.error('Error', err);
+		});
+});
