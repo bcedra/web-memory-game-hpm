@@ -369,6 +369,8 @@ td:hover {
 	padding: 1px;
 }
 #replay-button {
+	width: 150px;
+	height: 55px;
 	text-align: center;
 	font-size: 20px;
 }
