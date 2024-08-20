@@ -5,12 +5,12 @@
 	"Start": "Start",
 	"Timer": "Timer",
 	"Exit": "Exit",
-	"Replay": "Restart",
+	"Replay": "🔁 Restart",
 	"Language": "Language",
 	"Difficulty": "Difficulty",
 	"Easy": "Easy",
 	"Hard": "Hard",
-	"Back": "Back",
+	"Back": "< Back",
 	"Category": "Category",
 	"en": "English",
 	"ro": "Romanian",
@@ -23,6 +23,6 @@
 	"Time": "Time",
 	"Name": "Username",
 	"MemoryGame": "Memory Game",
-	"Attempts": "Attempts",
+	"Attempts": "Attempts: ",
 	"Country flags": "Country flags"
 }

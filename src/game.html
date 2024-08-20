@@ -11,7 +11,7 @@
 	<body>
 		<header>
 			<a href="index.html">
-				<button id="exit-button" data-translate="Exit" class="button">&lt;</button>
+				<button type="button" id="backButton" class="button" data-translate="Back"><i class="fa fa-angle-left"></i> Exit</button>
 			</a>
 		</header>
 		<div id="setup-screen">
@@ -23,14 +23,18 @@
 				<img id="avatar" src="./assets/avatars/1.png" />
 				<button id="next-button" class="button"><i class="fa fa-angle-right"></i></button>
 			</div>
-			<div><button type="button" class="button" id="start-button" data-translate="Start"></button></div>
+			<div>
+				<button type="button" class="button" id="start-button"><i class="fa fa-play"></i> Play!</button>
+			</div>
 		</div>
 		<div id="game-screen" hidden="true">
 			<header class="game-header">
-				<button id="replay-button" data-translate="Replay" class="button"></button>
+				<button id="replay-button" data-translate="Replay" class="button"><i class="fa fa-refresh"></i> Replay</button>
+
 				<div id="timer" class="timer" data-translate="Timer">00:00</div>
 				<div class="user-info">
-					<span id="failed-pairs">Failed : 0 </span>
+					<label id="failed-pairs-label" data-translate="Attempts"></label>
+					<span id="failed-pairs"></span>
 					<img id="user-avatar" src="" alt="Avatar" />
 					<span id="username"></span>
 				</div>

@@ -1,17 +1,17 @@
 {
 	"HelloWorld": "Salut Lume!",
-	"EnterName": "Nume de joc",
+	"EnterName": "Nume de joc: ",
 	"SelectAvatar": "Avatar: ",
 	"Start": "Incepe",
 	"Timer": "Timp",
 	"Exit": "Iesire",
-	"Replay": "Incepe din nou",
+	"Replay": "🔁 Restart",
 	"Language": "Limbă",
 	"Difficulty": "Dificultate",
 	"Easy": "Ușoară",
 	"Hard": "Grea",
 	"Category": "Categorie",
-	"Back": "Înapoi",
+	"Back": "< Înapoi",
 	"en": "Engleză",
 	"ro": "Română",
 	"Settings": "Setări",
@@ -23,6 +23,6 @@
 	"Time": "Timp",
 	"Name": "Nume",
 	"MemoryGame": "Joc de memorie",
-	"Attempts": "Incercări",
+	"Attempts": "Încercări: ",
 	"Country flags": "Steaguri de țări"
 }
