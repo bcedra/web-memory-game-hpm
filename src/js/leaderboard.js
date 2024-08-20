@@ -1,3 +1,7 @@
+import { initializeTranslations } from './translations.js';
+
+initializeTranslations();
+
 async function uploadLeaderboard(difficulty = 'hard') {
 	try {
 		const response = await fetch(`http://localhost:3000/leaderboard?difficulty=${difficulty}`);
@@ -9,9 +13,15 @@ async function uploadLeaderboard(difficulty = 'hard') {
 }
 
 function createTable(leaderboardData) {
+	leaderboardData.sort(function (a, b) {
+		return a.time_in_seconds - b.time_in_seconds;
+	});
 	var col = '';
+	var index = 0;
 	leaderboardData.forEach((itemData) => {
 		col += '<tr>';
+		col += '<td>' + (index + 1) + '</td>';
+		index = index + 1;
 		col += '<td>' + itemData.username + '</td>';
 		col += '<td>' + itemData.difficulty + '</td>';
 		col += '<td>' + itemData.time_in_seconds + '</td>';
