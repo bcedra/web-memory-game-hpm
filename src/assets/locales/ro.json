@@ -1,7 +1,7 @@
 {
 	"HelloWorld": "Salut Lume!",
-	"EnterName": "Nume de joc: ",
-	"SelectAvatar": "Selecteaza avatarul: ",
+	"EnterName": "Nume de joc",
+	"SelectAvatar": "Avatar: ",
 	"Start": "Incepe",
 	"Timer": "Timp",
 	"Exit": "Iesire",

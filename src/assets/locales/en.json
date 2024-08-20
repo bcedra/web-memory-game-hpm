@@ -1,7 +1,7 @@
 {
 	"HelloWorld": "Hello World!",
 	"EnterName": "Nickname: ",
-	"SelectAvatar": "Select your avatar: ",
+	"SelectAvatar": "Avatar: ",
 	"Start": "Start",
 	"Timer": "Timer",
 	"Exit": "Exit",

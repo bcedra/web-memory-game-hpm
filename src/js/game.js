@@ -12,7 +12,7 @@ var timerInterval;
 var sec = 0;
 var min = 0;
 var size;
-var failedPairs = 0;
+var failedPairs = '0';
 var categorySelectedByUser;
 
 function difficulty() {
@@ -91,7 +91,7 @@ function handleStartButton() {
 	const avatar = document.getElementById('avatar').src;
 
 	if (!username) {
-		setError('name', 'Please enter your nickname!');
+		setError('name', '');
 		hasError = true;
 	}
 

@@ -11,13 +11,15 @@
 	<body>
 		<header>
 			<a href="index.html">
-				<button type="button" id="backButton" data-translate="Back">Back</button>
+				<button type="button" id="backButton" class="button" data-translate="Back">Back</button>
 			</a>
 			<h1 data-translate="Leaderboard" class="glow">Leaderboard</h1>
-			<select id="sort-selector">
-				<option data-translate="hard" value="hard" selected>Difficulty Hard</option>
-				<option data-translate="easy" value="easy">Difficulty Easy</option>
-			</select>
+			<div class="settingsMenuOptions">
+				<select id="sort-selector" class="settingsDropdowns">
+					<option data-translate="hard" value="hard" selected class="option">Difficulty Hard</option>
+					<option data-translate="easy" value="easy" class="option">Difficulty Easy</option>
+				</select>
+			</div>
 		</header>
 		<div class="container">
 			<table class="leaderboard-table">

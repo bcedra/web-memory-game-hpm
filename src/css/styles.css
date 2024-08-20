@@ -228,6 +228,7 @@ a {
 }
 .user-info {
 	color: white;
+	padding: 10px;
 }
 .error {
 	color: red;
@@ -322,6 +323,9 @@ td:hover {
 	text-align: center;
 	position: relative;
 	top: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 #avatar {
 	width: 100px;
@@ -337,12 +341,17 @@ td:hover {
 	font-size: 20px;
 	font-weight: 800;
 	color: #ffffffc4;
+	padding: 30px;
 }
 #user-avatar,
 #username,
 #failed-pairs {
 	display: inline;
 	vertical-align: middle;
+}
+#replay-button {
+	text-align: center;
+	font-size: 15px;
 }
 img {
 	width: 90px;
@@ -383,6 +392,17 @@ img {
 	width: 90px !important;
 	height: 20px !important;
 }
+#sort-selector {
+	border-radius: 20px;
+	background-size: 600px 55px;
+	background-image: radial-gradient(circle, #a1345a 0px, #ba4c73 200px);
+	box-shadow: 0 4px 15px 0 #662039;
+	width: 160px !important;
+	height: 40px !important;
+	text-align: center;
+	background-color: #813550;
+	color: #ffffffc4;
+}
 #langSelDiv {
 	border-radius: 20px;
 	background-size: 600px 55px;
@@ -408,6 +428,7 @@ img {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	margin-bottom: 20px;
 }
 .column {
 	font-family: 'Liquid', sans-serif;
