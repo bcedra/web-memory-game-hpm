@@ -6,13 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
 	initializeTranslations();
 	addStartListeners();
 	displayUsername();
+	clearErrors();
+	const name = document.getElementById('name');
+
+	name.addEventListener('blur', onNameBlur);
 });
 
 var timerInterval;
 var sec = 0;
 var min = 0;
 var size;
-var failedPairs = 0;
+var failedPairs = '0';
 var categorySelectedByUser;
 
 function difficulty() {
@@ -91,7 +95,7 @@ function handleStartButton() {
 	const avatar = document.getElementById('avatar').src;
 
 	if (!username) {
-		setError('name', 'Please enter your nickname!');
+		setError('name');
 		hasError = true;
 	}
 
@@ -287,6 +291,13 @@ function checkIfAllCardsMatched() {
 	const allCardsFlipped = cardsArr.every((card) => card.querySelector('.flip').classList.contains('flipped'));
 	if (allCardsFlipped) {
 		clearInterval(timerInterval); //stop the timer
+
+		confetti({
+			particleCount: 100,
+			spread: 70,
+			origin: { y: 0.8 },
+		});
+
 		const timeInSeconds = min * 60 + sec;
 		localStorage.setItem('time_in_seconds', timeInSeconds.toString());
 
@@ -319,19 +330,12 @@ function checkIfAllCardsMatched() {
 	}
 }
 
-function setError(elementId, message) {
+function setError(elementId) {
 	const element = document.getElementById(elementId);
-	const errorElement = document.createElement('span');
-	errorElement.className = 'error-message';
-	errorElement.textContent = message;
-	element.parentElement.appendChild(errorElement);
 	element.classList.add('input-error');
 }
 
 function clearErrors() {
-	const errorMessages = document.querySelectorAll('.error-message');
-	errorMessages.forEach((msg) => msg.remove());
-
 	const inputElements = document.querySelectorAll('.input-error');
 	inputElements.forEach((el) => el.classList.remove('input-error'));
 }
@@ -356,6 +360,12 @@ nextButton.addEventListener('click', function () {
 	currentAvatar = currentAvatar === avatars.length - 1 ? 0 : currentAvatar + 1;
 	updateAvatar();
 });
+
+function onNameBlur() {
+	if (document.getElementById('name')) {
+		clearErrors();
+	}
+}
 
 window.onload = function () {
 	const savedAvatar = localStorage.getItem('selectedAvatar');

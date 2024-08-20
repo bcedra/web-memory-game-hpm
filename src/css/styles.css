@@ -310,8 +310,13 @@ td:hover {
 }
 
 .back {
-	background-color: rgb(221, 155, 188);
+	background-color: white;
+	font-size: 60px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
 	transform: rotateY(180deg);
+	color: #a50f6b;
+	animation: glow 1s ease-in-out infinite alternate;
 }
 #setup-screen {
 	text-align: center;
@@ -321,7 +326,10 @@ td:hover {
 .selection {
 	text-align: center;
 	position: relative;
-	top: 150px;
+	top: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 #avatar {
 	width: 100px;
@@ -331,18 +339,31 @@ td:hover {
 	width: 50px;
 	height: 50px;
 }
-#username,
-#failed-pairs {
+#username {
 	font-family: 'Liquid', sans-serif;
 	font-size: 20px;
 	font-weight: 800;
 	color: #ffffffc4;
+	padding: 30px;
 }
-#user-avatar,
-#username,
+
 #failed-pairs {
+	font-family: 'Liquid', sans-serif;
+	font-size: 20px;
+	font-weight: 800;
+	color: black;
+	padding: 35px;
+}
+
+#user-avatar,
+#username {
 	display: inline;
 	vertical-align: middle;
+	padding: 1px;
+}
+#replay-button {
+	text-align: center;
+	font-size: 15px;
 }
 img {
 	width: 90px;
@@ -383,6 +404,17 @@ img {
 	width: 90px !important;
 	height: 20px !important;
 }
+#sort-selector {
+	border-radius: 20px;
+	background-size: 600px 55px;
+	background-image: radial-gradient(circle, #a1345a 0px, #ba4c73 200px);
+	box-shadow: 0 4px 15px 0 #662039;
+	width: 160px !important;
+	height: 40px !important;
+	text-align: center;
+	background-color: #813550;
+	color: #ffffffc4;
+}
 #langSelDiv {
 	border-radius: 20px;
 	background-size: 600px 55px;
@@ -408,6 +440,7 @@ img {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	margin-bottom: 20px;
 }
 .column {
 	font-family: 'Liquid', sans-serif;

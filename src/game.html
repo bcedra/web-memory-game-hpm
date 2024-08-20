@@ -9,12 +9,16 @@
 	</head>
 
 	<body>
+		<header>
+			<a href="index.html">
+				<button id="exit-button" data-translate="Exit" class="button">&lt;</button>
+			</a>
+		</header>
 		<div id="setup-screen">
 			<label for="name-label" data-translate="EnterName" class="input" id="input-label"></label>
-			<input type="text" id="name" class="input" required />
-
+			<input type="text" id="name" class="input" required maxlength="15" />
 			<div class="selection">
-				<label for="avatar" data-translate="SelectAvatar" class="input" id="avatar-selection"></label>
+				<div><label for="avatar" data-translate="SelectAvatar" class="input" id="avatar-selection"></label></div>
 				<button id="previous-button" class="button"><i class="fa fa-angle-left"></i></button>
 				<img id="avatar" src="./assets/avatars/1.png" />
 				<button id="next-button" class="button"><i class="fa fa-angle-right"></i></button>
@@ -23,19 +27,17 @@
 		</div>
 		<div id="game-screen" hidden="true">
 			<header class="game-header">
-				<a href="index.html">
-					<button id="exit-button" data-translate="Exit" class="button">&lt;</button>
-				</a>
+				<button id="replay-button" data-translate="Replay" class="button"></button>
 				<div id="timer" class="timer" data-translate="Timer">00:00</div>
 				<div class="user-info">
+					<span id="failed-pairs">Failed : 0 </span>
 					<img id="user-avatar" src="" alt="Avatar" />
 					<span id="username"></span>
-					<span id="failed-pairs"></span>
 				</div>
-				<button id="replay-button" data-translate="Replay" class="button"></button>
 			</header>
 			<table class="table-container" id="game-board"></table>
 		</div>
 		<script type="module" src="js/game.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 	</body>
 </html>
