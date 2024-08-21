@@ -24,5 +24,6 @@
 	"Name": "Username",
 	"MemoryGame": "Memory Game",
 	"Attempts": "Attempts: ",
+	"AttemptsLeadbrd": "Attempts",
 	"Country flags": "Country flags"
 }

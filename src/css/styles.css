@@ -19,6 +19,17 @@ h1 {
 	font-size: 70px;
 }
 
+#leaderboard-title {
+	zoom: 0.9;
+}
+
+#leadTitleTop {
+	width: fit-content;
+	position: relative;
+	left: auto;
+	right: auto;
+	top: 5px;
+}
 .glow {
 	color: #a50f6b;
 	animation: glow 1s ease-in-out infinite alternate;
@@ -259,6 +270,11 @@ a {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.leaderboard-cell {
+	width: 250px;
+	height: 35px;
+}
 .table-container {
 	margin-left: auto;
 	margin-right: auto;
@@ -266,13 +282,14 @@ a {
 td {
 	background-color: rgb(189, 135, 160);
 	border: 2px solid rgb(143, 77, 102);
-	border-style: dashed;
+	border-style: solid;
 	padding: 0px;
 	text-align: center;
 	perspective: 1000px;
 	box-sizing: border-box;
 	border-color: #480930;
 	border: 1px solid;
+	font-size: 20px;
 }
 
 td:hover {
@@ -479,10 +496,18 @@ img {
 	font-weight: 800;
 }
 .column {
+	width: 250px;
+	height: 35px;
 	font-family: 'Liquid', sans-serif;
 	font-size: 20px;
-	color: #480930;
-}
+	color: #72344e;
+	background-color: rgb(198, 108, 150);
+	border-style: solid;
+	border-color: #480930;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-color: transparent;}
+
 @media screen and (max-width: 480px) {
 	h1,
 	.glow {
@@ -495,6 +520,25 @@ img {
 	#leaderboard-button {
 		top: 220px;
 		left: 20px;
+	}
+
+	#backButton {
+		zoom: 0.7;
+	}
+
+	#leadTitleTop {
+		width: fit-content;
+		position: relative;
+		left: auto;
+		right: auto;
+		top: 5px;
+	}
+
+	.column {
+		font-size: 15px;
+		border-top-right-radius: 20px;
+		border-top-left-radius: 20px;
+		color: #59103d;
 	}
 	.play {
 		top: 120px;
@@ -659,6 +703,7 @@ img {
 		font-size: 20px;
 	}
 }
+
 @media screen and (max-width: 600px) {
 	.card,
 	.flip,

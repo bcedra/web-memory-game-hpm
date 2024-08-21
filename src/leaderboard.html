@@ -9,14 +9,16 @@
 	</head>
 
 	<body>
-		<header>
+		<header id="leaderboard-title">
 			<a href="index.html">
 				<button type="button" id="backButton" class="input">
 					<i class="fa fa-arrow-left"></i>
 					<span data-translate="Back"></span>
 				</button>
 			</a>
-			<h1 data-translate="Leaderboard" class="glow">Leaderboard</h1>
+			<div class="leadTitleTop">
+				<h1 data-translate="Leaderboard" class="glow">Leaderboard</h1>
+			</div>
 			<div class="settingsMenuOptions">
 				<label for="difficulty" data-translate="Difficulty" class="labels"></label>
 				<select id="sort-selector" class="settingsDropdowns">
@@ -33,7 +35,7 @@
 						<th data-translate="Name" class="column">Name</th>
 						<th data-translate="Difficulty" class="column">Difficulty</th>
 						<th data-translate="Time" class="column">Time in seconds</th>
-						<th data-translate="Attempts" class="column">Attempts</th>
+						<th data-translate="AttemptsLeadbrd" class="column">Attempts</th>
 					</tr>
 				</thead>
 				<tbody id="data"></tbody>
