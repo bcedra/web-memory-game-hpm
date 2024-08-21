@@ -489,7 +489,7 @@ img {
 		font-size: 30px;
 	}
 	#settings-button {
-		top: 180px;
+		top: 230px;
 		left: 20px;
 	}
 	#leaderboard-button {
@@ -556,7 +556,7 @@ img {
 
 @media screen and (min-width: 1000px) {
 	#settings-button {
-		top: 180px;
+		top: 230px;
 		left: 20px;
 	}
 	#leaderboard-button {
@@ -573,11 +573,11 @@ img {
 		top: 160px;
 	}
 	#leaderboard-button {
-		top: 340px;
+		top: 280px;
 		left: 20px;
 	}
 	#settings-button {
-		top: 300px;
+		top: 290px;
 		left: 20px;
 	}
 	.table-container {
@@ -594,7 +594,7 @@ img {
 		left: 20px;
 	}
 	#settings-button {
-		top: 180px;
+		top: 230px;
 		left: 20px;
 	}
 }
@@ -608,7 +608,7 @@ img {
 		left: 20px;
 	}
 	#settings-button {
-		top: 380px;
+		top: 430px;
 		left: 20px;
 	}
 }
