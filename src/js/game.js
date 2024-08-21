@@ -82,6 +82,9 @@ function resetTimer() {
 function handleReplayButton() {
 	resetTimer();
 	failedPairs = 0;
+	lockBoard = false;
+	flippedCards = [];
+	cardsArr = [];
 	displayFails();
 	createTable();
 	timer();
