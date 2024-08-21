@@ -265,13 +265,16 @@ a {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.leaderboard-cell {
+	width: 250px;
+	height: 35px;
+}
 .table-container {
 	margin-left: auto;
 	margin-right: auto;
 }
 td {
-	width: 250px;
-	height: 35px;
 	background-color: rgb(189, 135, 160);
 	border: 2px solid rgb(143, 77, 102);
 	border-style: solid;
@@ -472,16 +475,18 @@ img {
 	font-weight: 800;
 }
 .column {
+	width: 250px;
+	height: 35px;
 	font-family: 'Liquid', sans-serif;
-	font-size: 25px;
+	font-size: 20px;
 	color: #72344e;
 	background-color: rgb(198, 108, 150);
 	border-style: solid;
 	border-color: #480930;
 	border-top-left-radius: 30px;
 	border-top-right-radius: 30px;
-	border-bottom-color: transparent;
-}
+	border-bottom-color: transparent;}
+
 @media screen and (max-width: 480px) {
 	h1,
 	.glow {
@@ -506,11 +511,6 @@ img {
 		left: auto;
 		right: auto;
 		top: 5px;
-	}
-
-	td {
-		width: 100px;
-		font-size: 15px;
 	}
 
 	.column {
