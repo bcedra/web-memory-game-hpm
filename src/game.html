@@ -11,7 +11,10 @@
 	<body>
 		<header>
 			<a href="index.html">
-				<button type="button" id="backButton" class="button" data-translate="Back"><i class="fa fa-angle-left"></i> Exit</button>
+				<button type="button" id="backButton" class="input">
+					<i class="fa fa-arrow-left"></i>
+					<span data-translate="Back"></span>
+				</button>
 			</a>
 		</header>
 		<div id="setup-screen">
@@ -29,8 +32,10 @@
 		</div>
 		<div id="game-screen" hidden="true">
 			<header class="game-header">
-				<button id="replay-button" data-translate="Replay" class="button"><i class="fa fa-refresh"></i> Replay</button>
-
+				<button class="input" id="replay-button">
+					<i class="fa fa-refresh"></i>
+					<span data-translate="Replay"></span>
+				</button>
 				<div id="timer" class="timer" data-translate="Timer">00:00</div>
 				<div class="user-info">
 					<label id="failed-pairs-label" data-translate="Attempts"></label>
